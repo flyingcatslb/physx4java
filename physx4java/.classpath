@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/vecmath.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/jme"/>
+	<classpathentry kind="lib" path="/jme/lib/jinput.jar"/>
+	<classpathentry kind="lib" path="/jme/lib/jogg-0.0.7.jar"/>
+	<classpathentry kind="lib" path="/jme/lib/jorbis-0.0.15.jar"/>
+	<classpathentry kind="lib" path="/jme/lib/junit-4.1.jar"/>
+	<classpathentry kind="lib" path="/jme/lib/lwjgl_fmod3.jar"/>
+	<classpathentry kind="lib" path="/jme/lib/lwjgl_util_applet.jar"/>
+	<classpathentry kind="lib" path="/jme/lib/lwjgl.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
