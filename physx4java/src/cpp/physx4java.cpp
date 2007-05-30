@@ -583,7 +583,7 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_jointD6DescSetLinearDegrees
 }
 JNIEXPORT void JNICALL Java_net_physx4java_Functions_jointD6DescSetAngularDegreesOfFreedom
 (JNIEnv *, jobject,int jointId, int swing1,int swing2,int twist) {
-	
+	//cout<<"\n LINEAR "<<swing1<<" "<<swing2<<" "<<twist<<" \n";
 	//get jointdesc
 	NxD6JointDesc * desc = (NxD6JointDesc*) getJointDesc(jointId);
 	desc->swing1Motion = (NxD6JointMotion) swing1;
@@ -635,7 +635,8 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_jointD6DescSetTwistLimit
 	jointDesc->twistLimit.low = highDesc;
 }
 void fillJointDriveDesc(NxJointDriveDesc &desc,int driveType,float damping,float forceLimit,float spring) {
-	desc.driveType = 100;
+	
+	desc.driveType = driveType;
 	desc.damping = damping;
 	desc.forceLimit = forceLimit;
 	desc.spring = spring;

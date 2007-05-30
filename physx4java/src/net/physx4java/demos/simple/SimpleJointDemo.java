@@ -60,9 +60,11 @@ public class SimpleJointDemo {
 		 */
 		JointD6Desc jd = new JointD6Desc();
 		jd.setActors(sphere, box);
+		jd.setLinearDegreesOfFreedom(Functions.NxD6JointMotion.NX_D6JOINT_MOTION_LOCKED,Functions.NxD6JointMotion.NX_D6JOINT_MOTION_LIMITED,Functions.NxD6JointMotion.NX_D6JOINT_MOTION_FREE);;
+		jd.setAngularDegreesOfFreedom(Functions.NxD6JointMotion.NX_D6JOINT_MOTION_LOCKED,Functions.NxD6JointMotion.NX_D6JOINT_MOTION_LIMITED,Functions.NxD6JointMotion.NX_D6JOINT_MOTION_FREE);;		
 		//set actors of jointdesc
 		D6Joint joint = new D6Joint(jd);
-
+		System.exit(0);
 		
 		
 		//iterate the world

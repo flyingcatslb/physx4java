@@ -9,23 +9,74 @@ public class Functions {
 	 * 
 	 * 
 	 */
+	public enum NxJointProjectionMode
+	{
+	NX_JPM_NONE(0),				//!< don't project this joint
+	NX_JPM_POINT_MINDIST(1),		//!< linear and angular minimum distance projection
+	NX_JPM_LINEAR_MINDIST(2);		//!< linear only minimum distance projection
+	//there may be more modes later
+	int value;
+	public int getValue() {
+		return value;
+	}
+	NxJointProjectionMode(int value) {
+		this.value = value;
+
+	}
+	};
+	
+	/**
+	\brief Used to specify a particular drive method. i.e. Having a position based goal or a velocity based goal.
+	*/
+	public enum NxD6JointDriveType 
+		{
+		/**
+		\brief Used to set a position goal when driving.
+
+		Note: the appropriate target positions/orientations should be set.
+
+		@see NxD6JointDesc.xDrive NxD6Joint.swingDrive NxD6JointDesc.drivePosition
+		*/
+		NX_D6JOINT_DRIVE_POSITION(1<<0),
+
+		/**
+		\brief Used to set a velocity goal when driving.
+
+		Note: the appropriate target velocities should beset.
+
+		@see NxD6JointDesc.xDrive NxD6Joint.swingDrive NxD6JointDesc.driveLinearVelocity
+		*/
+		NX_D6JOINT_DRIVE_VELOCITY(1<<1);
+		int value;
+		public int getValue() {
+			return value;
+		}
+		NxD6JointDriveType(int value) {
+			this.value = value;
+
+		}
+		};
+	
 	public enum NxD6JointMotion {
-		NX_D6JOINT_MOTION_LOCKED, // !< The DOF is locked, it does not allow
+		
+		NX_D6JOINT_MOTION_LOCKED(0), // !< The DOF is locked, it does not allow
 									// relative motion.
-		NX_D6JOINT_MOTION_LIMITED, // !< The DOF is limited, it only allows
+		NX_D6JOINT_MOTION_LIMITED(1), // !< The DOF is limited, it only allows
 									// motion within a specific range.
-		NX_D6JOINT_MOTION_FREE
+		NX_D6JOINT_MOTION_FREE(2);
 		// !< The DOF is free and has its full range of motions.
+		int value;
+		public int getValue() {
+			return value;
+		}
+		NxD6JointMotion (int value) {
+			this.value = value;
+
+		}
 
 	}
 
-	enum NxJointProjectionMode {
-		NX_JPM_NONE, // !< don't project this joint
-		NX_JPM_POINT_MINDIST, // !< linear and angular minimum distance
-								// projection
-		NX_JPM_LINEAR_MINDIST, // !< linear only minimum distance projection
-		// there may be more modes later
-	};
+	
 
 	public enum NxD6JointFlag {
 		/**
@@ -43,7 +94,9 @@ public class Functions {
 		NX_D6JOINT_GEAR_ENABLED(1 << 1);
 
 		private final int flag;
-
+		public int getValue() {
+			return flag;
+		}
 		NxD6JointFlag(int flag) {
 			this.flag = flag;
 
@@ -192,10 +245,10 @@ public class Functions {
 	public static native void jointDescD6Create(int id);
 
 	public static native void jointD6DescSetLinearDegreesOfFreedom(int jointId,
-			int motion_x, int motion_y, int motion_z);
+			int  motion_x, int  motion_y, int motion_z);
 
 	public static native void jointD6DescSetAngularDegreesOfFreedom(
-			int jointId, int swing1, int swing2, int twist);
+			int jointId, int motion_x, int  motion_y, int motion_z);
 
 	public static native void jointD6DescSetLinearLimit(int jointId,
 			float value, float restitution, float spring, float damping);
