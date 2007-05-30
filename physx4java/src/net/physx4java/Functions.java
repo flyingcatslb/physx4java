@@ -352,6 +352,8 @@ public class Functions {
 	public static native void jointRevoluteDescSetMotor(int jointId,float velTarget,float maxForce,boolean freeSpin);
 	public static native void jointRevoluteDescSetSpring(int jointId,float spring,float damper,float targetValue);
 	public static native void jointRevoluteDescSetFlags(int jointId,int flags);
+	public static native float jointRevoluteGetAngle(int jointId);
+	public static native float  jointRevoluteGetVelocity(int jointId);
 	static {
 		System.loadLibrary("physx");
 	}

@@ -12,10 +12,11 @@ import net.physx4java.dynamics.joints.RevoluteJointDesc;
 public class JmeRevoluteJointDemo1 extends JmeDemo{
 	Actor actor1;
 	Actor actor2;
+	RevoluteJoint joint;
 	public void initPhysics() {
 		Functions.testRunner();
 		super.initPhysics();
-		
+		//world.setGravity(0, -9.8f, 0);
 		//create actors
 		ActorParameters params = new ActorParameters();
 		params.setDensity(10);
@@ -32,7 +33,7 @@ public class JmeRevoluteJointDemo1 extends JmeDemo{
 		jd.setGlobalAxis(0,1,0f);
 		//jd.set
 		//set actors of jointdesc
-		RevoluteJoint joint = new RevoluteJoint(jd);
+		joint = new RevoluteJoint(jd);
 		
 		
 	}
@@ -46,10 +47,14 @@ public class JmeRevoluteJointDemo1 extends JmeDemo{
 		// TODO Auto-generated method stub
 		super.simpleUpdate();
 		count--;
+		float angle = 0.3f;
 		if(count<=0) {
+			angle = -angle;
 			count = 1000;
 			System.out.println("FORCE");
-			actor1.addForce(0, 500, 0);
+			actor2.addForce(0, 500, 0);
+			//System.out.println(joint.getAngle());
+			//System.out.println(joint.getVelocity());
 			
 		}
 		

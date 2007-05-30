@@ -817,6 +817,16 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_jointCreate
 	NxJoint  * joint = (NxJoint*) scene->createJoint(desc);
 	addJoint(jointId,joint);
 }	
+JNIEXPORT float JNICALL Java_net_physx4java_Functions_jointRevoluteGetAngle
+(JNIEnv *,jobject,int jointId) {
+	NxRevoluteJoint * joint = (NxRevoluteJoint*) getJoint(jointId);
+	return joint->getAngle();
+}
+JNIEXPORT float JNICALL Java_net_physx4java_Functions_jointRevoluteGetVelocity
+(JNIEnv *,jobject,int jointId) {
+	NxRevoluteJoint * joint = (NxRevoluteJoint*) getJoint(jointId);
+	return joint->getVelocity();
+}
 
 JNIEXPORT void JNICALL Java_net_physx4java_Functions_testRunner
 (JNIEnv *, jobject) {
@@ -824,6 +834,7 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_testRunner
 	cout<<NX_D6JOINT_MOTION_LIMITED<<"\n";
 	cout<<NX_D6JOINT_MOTION_FREE<<"\n";
 }
+
 
 
 
