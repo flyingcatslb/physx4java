@@ -225,7 +225,7 @@ public class Functions {
 	 */
 	public static native void jointDescSetActors(int jointId, int actorId1,
 			int actorId2);
-	public static native void jointDescSetGlobalAxis(int jointId, float axis[]); 
+	public static native void jointDescSetGlobalAxis(int jointId, float x,float y,float z); 
 
 	public static native void jointDescSetLocalNormal(int jointId,
 			float normal1[], float normal2[]);
@@ -234,7 +234,7 @@ public class Functions {
 			float f2[]);
 
 	public static native void jointDescSetGlobalAnchor(int jointId,
-			float anchor[]);
+			float x,float y,float z);
 
 	/*
 	 * D6 joint desc

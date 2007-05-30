@@ -10,6 +10,11 @@ public class D6Joint extends Joint{
 		Functions.jointD6Create(desc.getId());
 		
 	}
+	public JointD6Desc getJointD6Desc() {
+		return jointDesc;
+	} 
+	
+
 	@Override
 	public JointDesc getJointDesc() {
 		// TODO Auto-generated method stub

@@ -99,7 +99,9 @@ public abstract class JointDesc {
 				Functions.toArray(anchor2));
 
 	}
-
+	public void setGlobalAnchor(Vector3f anchor) {
+		Functions.jointDescSetGlobalAnchor(id, anchor.x,anchor.y,anchor.z);
+	}
 	/**
 	 * Set the localAnchor[] members using a world space point.
 	 * 
@@ -112,11 +114,10 @@ public abstract class JointDesc {
 	 * vector
 	 * 
 	 * 
-	 * @param anchor1
-	 * @param anchor2
+	 * 
 	 */
-	public void setGlobalAnchor(Vector3f anchor1, Vector3f anchor2) {
-		Functions.jointDescSetGlobalAnchor(id, Functions.toArray(anchor1));
+	public void setGlobalAnchor(float x,float y,float z) {
+		Functions.jointDescSetGlobalAnchor(id, x,y,z);
 	}
 
 	/**
@@ -129,8 +130,8 @@ public abstract class JointDesc {
 	 * 
 	 * @param axis
 	 */
-	public void setGlobalAxis(Vector3f axis) {
-		Functions.jointDescSetGlobalAxis(id, Functions.toArray(axis));
+	public void setGlobalAxis(float x,float y,float z) {
+		Functions.jointDescSetGlobalAxis(id, x,y,z);
 	}
 
 }

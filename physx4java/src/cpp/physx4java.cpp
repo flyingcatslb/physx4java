@@ -513,7 +513,7 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_actorSetPosition
 		//get actors
 		NxActor * actor1 = getActor(actorId1);
 		NxActor * actor2 = getActor(actorId2);
-		//attact joint
+		//attach joint
 		desc->actor[0] = actor1;
 		desc->actor[1] = actor2;
 	}
@@ -545,21 +545,17 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_actorSetPosition
 		desc->localAnchor[1] = NxVec3(num_buf2);
 	}
 	JNIEXPORT void JNICALL Java_net_physx4java_Functions_jointDescSetGlobalAnchor
-	(JNIEnv *env , jobject, int jointId,jfloatArray anchor) {
-		jfloat num_buf[3];
-		env->GetFloatArrayRegion(anchor, 0, 3, num_buf);
-		//get jointdesc
-		NxJointDesc  * desc = getJointDesc(jointId);
-		desc->setGlobalAnchor(NxVec3(num_buf));
+	(JNIEnv *env , jobject, int jointId,float x,float y,float z) {
+		NxJointDesc  * desc = (NxJointDesc*) getJointDesc(jointId);
+		desc->setGlobalAnchor(NxVec3(x,y,z));
 		
 	}
 JNIEXPORT void JNICALL Java_net_physx4java_Functions_jointDescSetGlobalAxis
-	(JNIEnv *env , jobject, int jointId,jfloatArray axis) {
-		jfloat num_buf[3];
-		env->GetFloatArrayRegion(axis, 0, 3, num_buf);
-		//get jointdesc
+	(JNIEnv *env , jobject, int jointId,float x,float y,float z) {
+		
 		NxJointDesc  * desc = getJointDesc(jointId);
-		desc->setGlobalAxis(NxVec3(num_buf));
+		desc->setGlobalAxis(NxVec3(x,y,z));
+		
 		
 	}
 /*
@@ -568,8 +564,8 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_jointDescSetGlobalAxis
 JNIEXPORT void JNICALL Java_net_physx4java_Functions_jointDescD6Create
 (JNIEnv *, jobject, int id) {
 	
-	NxD6JointDesc desc;
-	addJointDesc(id,&desc);
+	NxD6JointDesc  * desc = new NxD6JointDesc();
+	addJointDesc(id,desc);
 }
 JNIEXPORT void JNICALL Java_net_physx4java_Functions_jointD6DescSetLinearDegreesOfFreedom
 (JNIEnv *, jobject,int jointId, int motion_x,int motion_y,int motion_z) {
@@ -755,9 +751,43 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_jointD6Create
 	NxJoint  * joint = (NxJoint*) scene->createJoint(desc);
 	addJoint(jointId,joint);
 }
+//joint functions
+JNIEXPORT void JNICALL Java_net_physx4java_Functions_jointSetLimitPoint
+(JNIEnv *, jobject,int jointId,float x,float y,float z,bool pointIsOnActor2) {
+	NxJoint * joint = getJoint(jointId);
+	joint->setLimitPoint(NxVec3(x,y,z),pointIsOnActor2);
+}
+JNIEXPORT void JNICALL Java_net_physx4java_Functions_jointAddLimitPlane
+(JNIEnv *, jobject,int jointId,float x1,float y1,float z1,float x2,float y2,float z2,float restitution) {
+	NxJoint * joint = getJoint(jointId);
+	joint->addLimitPlane(NxVec3(x1,y1,z1),NxVec3(x2,y2,z2),restitution);
+}
+JNIEXPORT void JNICALL Java_net_physx4java_Functions_jointPurgeLimitPlanes
+(JNIEnv *, jobject,int jointId) {
+	NxJoint * joint = getJoint(jointId);
+	joint->purgeLimitPlanes();
+}
+
+JNIEXPORT void JNICALL Java_net_physx4java_Functions_jointResetLimitPlaneIterator
+(JNIEnv *, jobject,int jointId) {
+	NxJoint * joint = getJoint(jointId);
+	joint->resetLimitPlaneIterator();
+}
+JNIEXPORT bool JNICALL Java_net_physx4java_Functions_jointHasMoreLimitPlanes
+(JNIEnv *, jobject,int jointId) {
+	NxJoint * joint = getJoint(jointId);
+	return joint->hasMoreLimitPlanes();
+}
+
+JNIEXPORT bool JNICALL Java_net_physx4java_Functions_jointGetNextLimitPlane
+(JNIEnv *,int jointId,float x,float y,float z,float planeD) {
+	NxJoint * joint = getJoint(jointId);
+	return joint->getNextLimitPlane(NxVec3(x,y,z),planeD,NULL);
+}
+
 JNIEXPORT void JNICALL Java_net_physx4java_Functions_testRunner
 (JNIEnv *, jobject) {
-	cout<<(int)NX_D6JOINT_MOTION_LOCKED<<"\n";
+	cout<<NX_D6JOINT_MOTION_LOCKED<<"\n";
 	cout<<NX_D6JOINT_MOTION_LIMITED<<"\n";
 	cout<<NX_D6JOINT_MOTION_FREE<<"\n";
 }

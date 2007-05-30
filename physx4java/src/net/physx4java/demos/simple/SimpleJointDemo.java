@@ -3,6 +3,8 @@ package net.physx4java.demos.simple;
 import javax.vecmath.Matrix3f;
 import javax.vecmath.Vector3f;
 
+import sun.awt.GlobalCursorManager;
+
 import net.physx4java.Functions;
 import net.physx4java.World;
 import net.physx4java.dynamics.actors.Actor;
@@ -21,7 +23,7 @@ public class SimpleJointDemo {
 		//Create a new world
 		World world =  new World();
 		//set gravity
-		world.setGravity(1, -9, 4);
+		world.setGravity(0, -9, 0);
 		//create a groundplane
 		new GroundPlaneActor();
 		
@@ -60,25 +62,29 @@ public class SimpleJointDemo {
 		 */
 		JointD6Desc jd = new JointD6Desc();
 		jd.setActors(sphere, box);
-		jd.setLinearDegreesOfFreedom(Functions.NxD6JointMotion.NX_D6JOINT_MOTION_LOCKED,Functions.NxD6JointMotion.NX_D6JOINT_MOTION_LIMITED,Functions.NxD6JointMotion.NX_D6JOINT_MOTION_FREE);;
-		jd.setAngularDegreesOfFreedom(Functions.NxD6JointMotion.NX_D6JOINT_MOTION_LOCKED,Functions.NxD6JointMotion.NX_D6JOINT_MOTION_LIMITED,Functions.NxD6JointMotion.NX_D6JOINT_MOTION_FREE);;		
+		
+		//jd.setLinearDegreesOfFreedom(Functions.NxD6JointMotion.NX_D6JOINT_MOTION_LOCKED,Functions.NxD6JointMotion.NX_D6JOINT_MOTION_LIMITED,Functions.NxD6JointMotion.NX_D6JOINT_MOTION_FREE);;
+		//jd.setAngularDegreesOfFreedom(Functions.NxD6JointMotion.NX_D6JOINT_MOTION_LOCKED,Functions.NxD6JointMotion.NX_D6JOINT_MOTION_LIMITED,Functions.NxD6JointMotion.NX_D6JOINT_MOTION_FREE);;		
+		jd.setGlobalAnchor(100f,100f,100f);
+		jd.setGlobalAxis(0f,1f,0f);
 		//set actors of jointdesc
 		D6Joint joint = new D6Joint(jd);
-		System.exit(0);
+		
+		//System.exit(0);
 		
 		
 		//iterate the world
 		for(int i=0;i<90000;i++) {
 			//step the world
 			//world.update(0.01f);
-			sphere.addForce(100, 0, 0);
+			sphere.addForce(1000, 0, 0);
 			Thread.sleep(10);
 			material1.setDynamicFriction((float)(Math.random()*10f));
 			world.update(0.01f);
 			//print results
 			System.out.println("Position of objects : "+box.getPosition()+";"+sphere.getPosition());
-			System.out.println("Velocity ="+box.getLinearVelocity()+" "+sphere.getLinearVelocity());
-			System.out.println("Force ="+box.computeKineticEnergy()+" "+sphere.computeKineticEnergy());
+			//System.out.println("Velocity ="+box.getLinearVelocity()+" "+sphere.getLinearVelocity());
+			//System.out.println("Force ="+box.computeKineticEnergy()+" "+sphere.computeKineticEnergy());
 			//System.out.println("Rotation:\n "+box.getRotation()+";\n"+sphere.getRotation());
 			
 			
