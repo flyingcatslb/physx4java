@@ -9,6 +9,37 @@ public class Functions {
 	 * 
 	 * 
 	 */
+	public enum NxRevoluteJointFlag
+	{
+	/**
+	true if limits is enabled
+
+	@see NxRevoluteJointDesc.limit
+	*/
+	NX_RJF_LIMIT_ENABLED (1 << 0),
+	
+	/**
+	true if the motor is enabled
+
+	@see NxRevoluteJoint.motor
+	*/
+	NX_RJF_MOTOR_ENABLED (1 << 1),
+	
+	/**
+	true if the spring is enabled. The spring will only take effect if the motor is disabled.
+
+	@see NxRevoluteJoint.spring
+	*/
+	NX_RJF_SPRING_ENABLED (1 << 2);
+	int value;
+	public int getValue() {
+		return value;
+	}
+	NxRevoluteJointFlag(int value) {
+		this.value = value;
+
+	}
+	};
 	public enum NxJointProjectionMode
 	{
 	NX_JPM_NONE(0),				//!< don't project this joint
@@ -312,8 +343,15 @@ public class Functions {
 	/*
 	 * Joint D6 functions
 	 */
-	public static native void jointD6Create(int jointId);
-
+	public static native void jointCreate(int jointId);
+	/*
+	 * Joint revolute
+	 */
+	public static native void jointRevoluteDescCreate(int jointId);
+	public static native void jointRevoluteDescSetLimit(int jointId,float hardness1,float restitution1,float value1,float hardness2,float restitution2,float value2);
+	public static native void jointRevoluteDescSetMotor(int jointId,float velTarget,float maxForce,boolean freeSpin);
+	public static native void jointRevoluteDescSetSpring(int jointId,float spring,float damper,float targetValue);
+	public static native void jointRevoluteDescSetFlags(int jointId,int flags);
 	static {
 		System.loadLibrary("physx");
 	}

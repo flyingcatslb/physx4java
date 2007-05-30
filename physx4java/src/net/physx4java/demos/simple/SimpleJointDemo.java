@@ -14,7 +14,7 @@ import net.physx4java.dynamics.actors.GroundPlaneActor;
 import net.physx4java.dynamics.actors.Material;
 import net.physx4java.dynamics.actors.SphereActor;
 import net.physx4java.dynamics.joints.D6Joint;
-import net.physx4java.dynamics.joints.JointD6Desc;
+import net.physx4java.dynamics.joints.D6JointDesc;
 
 
 public class SimpleJointDemo {
@@ -60,7 +60,7 @@ public class SimpleJointDemo {
 		/*
 		 * add joint
 		 */
-		JointD6Desc jd = new JointD6Desc();
+		D6JointDesc jd = new D6JointDesc();
 		jd.setActors(sphere, box);
 		
 		//jd.setLinearDegreesOfFreedom(Functions.NxD6JointMotion.NX_D6JOINT_MOTION_LOCKED,Functions.NxD6JointMotion.NX_D6JOINT_MOTION_LIMITED,Functions.NxD6JointMotion.NX_D6JOINT_MOTION_FREE);;

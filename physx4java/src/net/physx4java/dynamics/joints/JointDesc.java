@@ -31,7 +31,7 @@ public abstract class JointDesc {
 
 	/**
 	 * 
-	 *Creates a new {@link JointD6Desc} 
+	 *Creates a new {@link D6JointDesc} 
 	 */
 	public JointDesc() {
 		super();

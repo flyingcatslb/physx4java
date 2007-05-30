@@ -740,17 +740,7 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_jointD6DescSetToDefault
 	jointDesc->setToDefault();
 }
 
-JNIEXPORT void JNICALL Java_net_physx4java_Functions_jointD6Create
-(JNIEnv *, jobject,int jointId) {
-	cout<<"KAJKAGESKOD "<<jointId;
-	NxD6JointDesc * jointDesc = (NxD6JointDesc*) getJointDesc(jointId);
-	
-	cout<<"JOINT DESC= "<<jointDesc->flags;
-	//NxD6JointDesc test;
-	NxJointDesc desc = *jointDesc;
-	NxJoint  * joint = (NxJoint*) scene->createJoint(desc);
-	addJoint(jointId,joint);
-}
+
 //joint functions
 JNIEXPORT void JNICALL Java_net_physx4java_Functions_jointSetLimitPoint
 (JNIEnv *, jobject,int jointId,float x,float y,float z,bool pointIsOnActor2) {
@@ -780,10 +770,53 @@ JNIEXPORT bool JNICALL Java_net_physx4java_Functions_jointHasMoreLimitPlanes
 }
 
 JNIEXPORT bool JNICALL Java_net_physx4java_Functions_jointGetNextLimitPlane
-(JNIEnv *,int jointId,float x,float y,float z,float planeD) {
+(JNIEnv *,jobject,int jointId,float x,float y,float z,float planeD) {
 	NxJoint * joint = getJoint(jointId);
 	return joint->getNextLimitPlane(NxVec3(x,y,z),planeD,NULL);
 }
+JNIEXPORT void JNICALL Java_net_physx4java_Functions_jointRevoluteDescCreate
+(JNIEnv *,jobject,int jointId) {
+	NxRevoluteJointDesc * desc = new  NxRevoluteJointDesc();
+	addJointDesc(jointId,desc);
+}
+JNIEXPORT void JNICALL Java_net_physx4java_Functions_jointRevoluteDescSetLimit
+(JNIEnv *,jobject,int jointId,float hardness1,float restitution1,float value1,float hardness2,float restitution2,float value2) {
+	NxRevoluteJointDesc * desc = (NxRevoluteJointDesc*)getJointDesc(jointId);
+	desc->limit.low.hardness = hardness1;
+	desc->limit.low.restitution = restitution1;
+	desc->limit.low.value = value1;
+	//
+	desc->limit.high.hardness = hardness2;
+	desc->limit.high.restitution = restitution2;
+	desc->limit.high.value = value2;
+}
+JNIEXPORT void JNICALL Java_net_physx4java_Functions_jointRevoluteDescSetMotor
+(JNIEnv *,jobject,int jointId,float velTarget,float maxForce,bool freeSpin) {
+	NxRevoluteJointDesc * desc = (NxRevoluteJointDesc*)getJointDesc(jointId);
+	desc->motor.freeSpin = freeSpin;
+	desc->motor.velTarget = velTarget;
+	desc->motor.maxForce = maxForce;
+}
+JNIEXPORT void JNICALL Java_net_physx4java_Functions_jointRevoluteDescSetSpring
+(JNIEnv *,jobject,int jointId,float spring,float damper,float targetValue) {
+	NxRevoluteJointDesc * desc = (NxRevoluteJointDesc*)getJointDesc(jointId);
+	desc->spring.spring = spring;
+	desc->spring.damper = damper;
+	desc->spring.targetValue = targetValue;
+}
+JNIEXPORT void JNICALL Java_net_physx4java_Functions_jointRevoluteDescSetFlags
+(JNIEnv *,jobject,int jointId,int flags) {
+	NxRevoluteJointDesc * desc = (NxRevoluteJointDesc*)getJointDesc(jointId);
+	desc->flags = flags;
+	
+}
+JNIEXPORT void JNICALL Java_net_physx4java_Functions_jointCreate
+(JNIEnv *,jobject,int jointId) {
+	NxJointDesc * jointDesc = getJointDesc(jointId);
+	NxJointDesc desc = *jointDesc;
+	NxJoint  * joint = (NxJoint*) scene->createJoint(desc);
+	addJoint(jointId,joint);
+}	
 
 JNIEXPORT void JNICALL Java_net_physx4java_Functions_testRunner
 (JNIEnv *, jobject) {

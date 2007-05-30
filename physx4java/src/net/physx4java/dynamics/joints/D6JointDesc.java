@@ -2,12 +2,12 @@ package net.physx4java.dynamics.joints;
 
 import net.physx4java.Functions;
 
-public class JointD6Desc extends JointDesc {
+public class D6JointDesc extends JointDesc {
 	/**
 	 * Creates a new JointD6Desc
 	 * 
 	 */
-	public JointD6Desc() {
+	public D6JointDesc() {
 		super();
 		Functions.jointDescD6Create(id);
 		// Functions.jointD6DescsetLinearDegreesOfFreedom(id,1,1,1);

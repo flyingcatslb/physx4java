@@ -11,19 +11,25 @@ A NULL actor represents the environment. Whenever the below comments mention two
  * @author MikL
  *
  */
-public abstract class Joint {
+public  class Joint {
 	Actor actor1,actor2;
+	JointDesc jointDesc;
+	public Joint(JointDesc desc) {
+		super();
+		this.jointDesc = desc;
+		// TODO Auto-generated constructor stub
+	}
 	public Actor getActor1() {
 		return actor1;
 	}
 	public Actor getActor2() {
 		return actor2;
 	}
-	public abstract JointDesc getJointDesc();
-	public Joint() {
-		super();
-	
+	public JointDesc getJointDesc() {
+		return jointDesc;
 	}
+		
+	
 	
 	public int getId() {
 		return getJointDesc().getId();

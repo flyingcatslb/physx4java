@@ -3,15 +3,14 @@ package net.physx4java.dynamics.joints;
 import net.physx4java.Functions;
 
 public class D6Joint extends Joint{
-	JointD6Desc jointDesc;
-	public D6Joint(JointD6Desc desc) {
-		super();
-		this.jointDesc = desc;
-		Functions.jointD6Create(desc.getId());
+	
+	public D6Joint(D6JointDesc desc) {
+		super(desc);
+		Functions.jointCreate(desc.getId());
 		
 	}
-	public JointD6Desc getJointD6Desc() {
-		return jointDesc;
+	public D6JointDesc getJointD6Desc() {
+		return (D6JointDesc) jointDesc;
 	} 
 	
 
