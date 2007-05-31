@@ -31,7 +31,7 @@ public class JmeD6JointDemo1 extends JmeDemo{
 		jd.setActors(actor1, actor2);
 		jd.setGlobalAnchor(0,2,0);
 		jd.setGlobalAxis(0,0,1f);
-		jd.setAngularDegreesOfFreedom(Functions.NxD6JointMotion.NX_D6JOINT_MOTION_LOCKED,Functions.NxD6JointMotion.NX_D6JOINT_MOTION_LOCKED,Functions.NxD6JointMotion.NX_D6JOINT_MOTION_LOCKED);
+		jd.setAngularDegreesOfFreedom(Functions.NxD6JointMotion.NX_D6JOINT_MOTION_FREE,Functions.NxD6JointMotion.NX_D6JOINT_MOTION_LOCKED,Functions.NxD6JointMotion.NX_D6JOINT_MOTION_LOCKED);
 		jd.setLinearDegreesOfFreedom(Functions.NxD6JointMotion.NX_D6JOINT_MOTION_LOCKED,Functions.NxD6JointMotion.NX_D6JOINT_MOTION_LOCKED,Functions.NxD6JointMotion.NX_D6JOINT_MOTION_LOCKED);
 		//jd.setProjectionMode(Functions.NxD6JointDriveType.NX_D6JOINT_DRIVE_POSITION, Functions.NxJointProjectionMode.u);
 		new D6Joint(jd);
