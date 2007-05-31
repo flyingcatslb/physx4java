@@ -313,16 +313,16 @@ public class Functions {
 	public static native void jointD6DescSetSlerpDrive(int jointId,
 			int driveType, float damping, float forceLimit, float spring);
 
-	public static native void jointD6DescSetDrivePosition(int jointId, float x,
+	public static native void jointD6SetDrivePosition(int jointId, float x,
 			float y, float z);
 
-	public static native void jointD6DescSetDriveOrientation(int jointId,
+	public static native void jointD6SetDriveOrientation(int jointId,
 			float x, float y, float z, float w);
 
-	public static native void jointD6DescSetDriveLinearVelocity(int jointId,
+	public static native void jointD6SetDriveLinearVelocity(int jointId,
 			float x, float y, float z);
 
-	public static native void jointD6DescSetDriveAngularVelocity(int jointId,
+	public static native void jointD6SetDriveAngularVelocity(int jointId,
 			float x, float y, float z);
 
 	public static native void jointD6DescSetProjectionMode(int jointId, int mode);
@@ -348,10 +348,10 @@ public class Functions {
 	 * Joint revolute
 	 */
 	public static native void jointRevoluteDescCreate(int jointId);
-	public static native void jointRevoluteDescSetLimit(int jointId,float hardness1,float restitution1,float value1,float hardness2,float restitution2,float value2);
-	public static native void jointRevoluteDescSetMotor(int jointId,float velTarget,float maxForce,boolean freeSpin);
-	public static native void jointRevoluteDescSetSpring(int jointId,float spring,float damper,float targetValue);
-	public static native void jointRevoluteDescSetFlags(int jointId,int flags);
+	public static native void jointRevoluteSetLimit(int jointId,float hardness1,float restitution1,float value1,float hardness2,float restitution2,float value2);
+	public static native void jointRevoluteSetMotor(int jointId,float velTarget,float maxForce,boolean freeSpin);
+	public static native void jointRevoluteSetSpring(int jointId,float spring,float damper,float targetValue);
+	public static native void jointRevoluteSetFlags(int jointId,int flags);
 	public static native float jointRevoluteGetAngle(int jointId);
 	public static native float  jointRevoluteGetVelocity(int jointId);
 	static {

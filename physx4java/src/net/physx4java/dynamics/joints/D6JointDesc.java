@@ -260,84 +260,7 @@ public class D6JointDesc extends JointDesc {
 				forceLimit, spring);
 	}
 
-	/**
-	 * If the type of xDrive (yDrive,zDrive) is NX_D6JOINT_DRIVE_POSITION,
-	 * drivePosition defines the goal position.
-	 * 
-	 * Range: position vector Default: Zero
-	 * 
-	 * 
-	 * @param driveType
-	 * @param x
-	 * @param y
-	 * @param z
-	 */
-	public void setDrivePosition(Functions.NxD6JointDriveType driveType,
-			float x, float y, float z) {
-		Functions.jointD6DescSetDrivePosition(id, x, y, z);
-	}
-
-	/**
-	 * If the type of swingDrive or twistDrive is NX_D6JOINT_DRIVE_POSITION,
-	 * driveOrientation defines the goal orientation.
-	 * 
-	 * Range: unit quaternion Default: Identity Quaternion
-	 * 
-	 * Platform:
-	 * 
-	 * PC SW: Yes PPU : Yes PS3 : Yes XB360: Yes
-	 * 
-	 * @param driveType
-	 * @param x
-	 * @param y
-	 * @param z
-	 * @param w
-	 */
-	public void setDriveOrientation(Functions.NxD6JointDriveType driveType,
-			float x, float y, float z, float w) {
-		Functions.jointD6DescSetDriveOrientation(id, x, y, z, w);
-	}
-
-	/**
-	 * If the type of xDrive (yDrive,zDrive) is NX_D6JOINT_DRIVE_VELOCITY,
-	 * driveLinearVelocity defines the goal linear velocity.
-	 * 
-	 * Range: velocity vector Default: Zero
-	 * 
-	 * Platform:
-	 * 
-	 * PC SW: Yes PPU : No PS3 : Yes XB360: Yes
-	 * 
-	 * @param driveType
-	 * @param x
-	 * @param y
-	 * @param z
-	 */
-	public void setDriveLinearVelocity(Functions.NxD6JointDriveType driveType,
-			float x, float y, float z) {
-		Functions.jointD6DescSetDriveLinearVelocity(id, x, y, z);
-	}
-
-	/**
-	 * If the type of swingDrive or twistDrive is NX_D6JOINT_DRIVE_VELOCITY,
-	 * driveAngularVelocity defines the goal angular velocity.
-	 * 
-	 * driveAngularVelocity.x - goal angular velocity about the twist axis
-	 * driveAngularVelocity.y - goal angular velocity about the swing1 axis
-	 * driveAngularVelocity.z - goal angular velocity about the swing2 axis
-	 * Range: angular velocity vector Default: Zero Platform:
-	 * 
-	 * PC SW: Yes PPU : No PS3 : Yes XB360: Yes
-	 * 
-	 * @param driveType
-	 * @param x
-	 * @param y
-	 * @param z
-	 */
-	public void setDriveAngularVelocity(Functions.NxD6JointDriveType driveType,
-			float x, float y, float z) {
-		Functions.jointD6DescSetDriveAngularVelocity(id, x, y, z);
-	}
+	
 
 	/**
 	 * If projectionMode is NX_JPM_NONE, projection is disabled. If
@@ -395,7 +318,7 @@ public class D6JointDesc extends JointDesc {
 	 * 
 	 * @param flag
 	 */
-	public void setFlags(Functions.NxD6JointFlag flag) {
-		Functions.jointD6DescSetFlags(id, flag.getValue());
+	public void setFlags(int flag) {
+		Functions.jointD6DescSetFlags(id, flag);
 	}
 }

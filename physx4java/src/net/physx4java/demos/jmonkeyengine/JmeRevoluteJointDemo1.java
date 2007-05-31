@@ -16,7 +16,7 @@ public class JmeRevoluteJointDemo1 extends JmeDemo{
 	public void initPhysics() {
 		Functions.testRunner();
 		super.initPhysics();
-		//world.setGravity(0, -9.8f, 0);
+		//world.setGravity(0, 0, 0);
 		//create actors
 		ActorParameters params = new ActorParameters();
 		params.setDensity(10);
@@ -31,9 +31,15 @@ public class JmeRevoluteJointDemo1 extends JmeDemo{
 		jd.setActors(actor1, actor2);
 		jd.setGlobalAnchor(0,0,0);
 		jd.setGlobalAxis(0,1,0f);
-		//jd.set
-		//set actors of jointdesc
+		
+		//jd.setMotor((float)Math.PI, 10000, false);
+		//enable motors
 		joint = new RevoluteJoint(jd);
+		joint.setLimit(0, 0, (float)-2,0, 0, (float)2);
+		
+		joint.setFlags(Functions.NxRevoluteJointFlag.NX_RJF_LIMIT_ENABLED.getValue()|Functions.NxRevoluteJointFlag.NX_RJF_MOTOR_ENABLED.getValue());
+		
+		
 		
 		
 	}
@@ -41,19 +47,24 @@ public class JmeRevoluteJointDemo1 extends JmeDemo{
 		new JmeRevoluteJointDemo1().start();
 	}
 	int count  = 500;
-	
+	float vel = -1f;
 	@Override
 	protected void simpleUpdate() {
 		// TODO Auto-generated method stub
 		super.simpleUpdate();
 		count--;
-		float angle = 0.3f;
+		
 		if(count<=0) {
-			angle = -angle;
 			count = 1000;
-			System.out.println("FORCE");
+			float angle = joint.getAngle();
+			if(angle<=-1.9||angle>=1.9) {
+				
+				vel = -vel;
+			}
+			System.out.println();
 			actor2.addForce(0, 500, 0);
-			//System.out.println(joint.getAngle());
+			joint.setMotor(vel, 20, false);
+			//
 			//System.out.println(joint.getVelocity());
 			
 		}

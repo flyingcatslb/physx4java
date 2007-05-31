@@ -14,6 +14,7 @@ A NULL actor represents the environment. Whenever the below comments mention two
 public  class Joint {
 	Actor actor1,actor2;
 	JointDesc jointDesc;
+	
 	public Joint(JointDesc desc) {
 		super();
 		this.jointDesc = desc;
