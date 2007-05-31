@@ -32,6 +32,7 @@ public class JmeRevoluteJointDemo1 extends JmeDemo{
 		jd.setGlobalAnchor(0,0,0);
 		jd.setGlobalAxis(0,1,0f);
 		
+		
 		//jd.setMotor((float)Math.PI, 10000, false);
 		//enable motors
 		joint = new RevoluteJoint(jd);
@@ -58,12 +59,14 @@ public class JmeRevoluteJointDemo1 extends JmeDemo{
 			count = 1000;
 			float angle = joint.getAngle();
 			if(angle<=-1.9||angle>=1.9) {
-				
+				joint.setSpring(1000, 2, vel);
 				vel = -vel;
+				joint.setMotor(vel, 20, false);
 			}
-			System.out.println();
+			//System.out.println();
 			actor2.addForce(0, 500, 0);
-			joint.setMotor(vel, 20, false);
+			
+			
 			//
 			//System.out.println(joint.getVelocity());
 			

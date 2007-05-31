@@ -11,7 +11,7 @@ public class RevoluteJoint extends Joint {
 
 	public RevoluteJoint(RevoluteJointDesc desc) {
 		super(desc);
-		Functions.jointCreate(desc.getId());
+		Functions.jointRevoluteCreate(desc.getId());
 
 		// TODO Auto-generated constructor stub
 	}

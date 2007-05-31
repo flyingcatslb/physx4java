@@ -2,24 +2,23 @@ package net.physx4java.dynamics.joints;
 
 import net.physx4java.Functions;
 
-public class D6Joint extends Joint {
-
+public class D6Joint extends Joint{
+	
 	public D6Joint(D6JointDesc desc) {
 		super(desc);
-		Functions.jointCreate(desc.getId());
-
+		Functions.jointD6Create(desc.getId());
+		
 	}
-
 	public D6JointDesc getJointD6Desc() {
 		return (D6JointDesc) jointDesc;
-	}
+	} 
+	
 
 	@Override
 	public JointDesc getJointDesc() {
 		// TODO Auto-generated method stub
 		return jointDesc;
 	}
-
 	/**
 	 * If the type of xDrive (yDrive,zDrive) is NX_D6JOINT_DRIVE_POSITION,
 	 * drivePosition defines the goal position.
@@ -98,5 +97,5 @@ public class D6Joint extends Joint {
 			float x, float y, float z) {
 		Functions.jointD6SetDriveAngularVelocity(getId(), x, y, z);
 	}
-
+	
 }

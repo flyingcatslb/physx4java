@@ -18,8 +18,10 @@ NxScene*          scene = NULL;
 std::map<int,NxActor*> actors;
 std::map<int,NxMaterial*> materials;
 std::map<int,NxActorDesc*> actorDesc;
-std::map<int,NxJointDesc*> jointDesc;
 std::map<int,NxJoint*> joints;
+std::map<int,NxJointDesc*> jointDesc;
+
+
 extern "C" {
 #endif
 	void addJoint(int id, NxJoint *j) {
@@ -28,6 +30,14 @@ extern "C" {
 	NxJoint * getJoint(int id) {
 		return joints[id];
 	}
+//std::map<int,NxJointDesc> testjointDesc;
+/*	void testaddJointDesc(int id, NxJointDesc &jd) {
+		testjointDesc[id] = jd;
+	}
+
+	NxJointDesc testgetJointDesc(int id, NxJointDesc &jd) {
+		return testjointDesc[id];
+	}*/
 	void addJointDesc(int id, NxJointDesc *jd) {
 		jointDesc[id] = jd;
 	}
@@ -570,11 +580,13 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_jointDescD6Create
 JNIEXPORT void JNICALL Java_net_physx4java_Functions_jointD6DescSetLinearDegreesOfFreedom
 (JNIEnv *, jobject,int jointId, int motion_x,int motion_y,int motion_z) {
 	
+	
 	//get jointdesc
 	NxD6JointDesc * desc = (NxD6JointDesc*) getJointDesc(jointId);
 	desc->xMotion = (NxD6JointMotion) motion_x;
 	desc->yMotion = (NxD6JointMotion) motion_y;
 	desc->zMotion = (NxD6JointMotion) motion_z;
+	
 	
 }
 JNIEXPORT void JNICALL Java_net_physx4java_Functions_jointD6DescSetAngularDegreesOfFreedom
@@ -582,9 +594,11 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_jointD6DescSetAngularDegree
 	//cout<<"\n LINEAR "<<swing1<<" "<<swing2<<" "<<twist<<" \n";
 	//get jointdesc
 	NxD6JointDesc * desc = (NxD6JointDesc*) getJointDesc(jointId);
+	
 	desc->swing1Motion = (NxD6JointMotion) swing1;
 	desc->swing2Motion = (NxD6JointMotion) swing2;
-	desc->twistMotion = (NxD6JointMotion) twist;
+	desc->twistMotion  =  (NxD6JointMotion) twist;
+
 }
 	void fillJointLimitDesc(NxJointLimitSoftDesc &desc,float value,float restitution,float spring,float damping) {
 		desc.value = value;
@@ -820,14 +834,33 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_jointRevoluteSetFlags
 	NxRevoluteJoint * j = (NxRevoluteJoint *)getJoint(jointId);
 	j->setFlags(flags);
 }
-JNIEXPORT void JNICALL Java_net_physx4java_Functions_jointCreate
+
+JNIEXPORT void JNICALL Java_net_physx4java_Functions_jointRevoluteCreate
 (JNIEnv *,jobject,int jointId) {
-	NxJointDesc * jointDesc = getJointDesc(jointId);
-	NxJointDesc desc = *jointDesc;
-	NxJoint  * joint = (NxJoint*) scene->createJoint(desc);
+	
+	///
+	NxRevoluteJointDesc * jointDesc = (NxRevoluteJointDesc *)getJointDesc(jointId);
+	NxRevoluteJointDesc desc = *jointDesc;
+	//
+	NxRevoluteJoint  * joint = (NxRevoluteJoint*) scene->createJoint( desc);
 	addJoint(jointId,joint);
 	
+	
 }	
+
+JNIEXPORT void JNICALL Java_net_physx4java_Functions_jointD6Create
+(JNIEnv *,jobject,int jointId) {
+	
+	///
+	NxD6JointDesc * jointDesc = (NxD6JointDesc *)getJointDesc(jointId);
+	NxD6JointDesc desc = *jointDesc;
+	//
+	NxD6Joint  * joint = (NxD6Joint*) scene->createJoint( desc);
+	addJoint(jointId,joint);
+	
+	
+}	
+
 JNIEXPORT float JNICALL Java_net_physx4java_Functions_jointRevoluteGetAngle
 (JNIEnv *,jobject,int jointId) {
 	NxRevoluteJoint * joint = (NxRevoluteJoint*) getJoint(jointId);

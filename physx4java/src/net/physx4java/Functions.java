@@ -343,10 +343,12 @@ public class Functions {
 	/*
 	 * Joint D6 functions
 	 */
-	public static native void jointCreate(int jointId);
+	public static native void jointD6Create(int jointId);
+	public static native void testjointCreate(int jointId,int a1,int a2);
 	/*
 	 * Joint revolute
 	 */
+	public static native void jointRevoluteCreate(int jointId);
 	public static native void jointRevoluteDescCreate(int jointId);
 	public static native void jointRevoluteSetLimit(int jointId,float hardness1,float restitution1,float value1,float hardness2,float restitution2,float value2);
 	public static native void jointRevoluteSetMotor(int jointId,float velTarget,float maxForce,boolean freeSpin);
