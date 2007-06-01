@@ -4,6 +4,7 @@ import javax.vecmath.Matrix3f;
 import javax.vecmath.Vector3f;
 
 import net.physx4java.Functions;
+import net.physx4java.World;
 
 
 /**
@@ -19,6 +20,7 @@ See NxActorDescBase for a more detailed description of the parameters which can 
 public abstract class Actor {
 	static int id_counter = 0;
 	int id;
+	String name;
 	Material material;
 	public Material getMaterial() {
 		return material;
@@ -54,6 +56,7 @@ public abstract class Actor {
 	public Actor() {
 		//create id
 		id = id_counter++;
+		World.addActor(this);
 	}
 	
 	/**
@@ -122,6 +125,12 @@ public abstract class Actor {
 	
 	public Vector3f getPosition() {
 		return new Vector3f(Functions.actorGetPosition(id));
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 	

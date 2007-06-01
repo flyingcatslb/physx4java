@@ -4,6 +4,39 @@ import javax.vecmath.Matrix3f;
 import javax.vecmath.Vector3f;
 
 public class Functions {
+	/**
+	\brief Contact pair flags.
+
+	@see NxUserContactReport.onContactNotify()
+	*/
+	public enum NxContactPairFlag
+		{
+		NX_IGNORE_PAIR(1<<0),	//!< Disable contact generation for this pair
+		NX_NOTIFY_ON_START_TOUCH		 (1<<1),	//!< Pair callback will be called when the pair starts to be in contact
+		NX_NOTIFY_ON_END_TOUCH			 (1<<2),	//!< Pair callback will be called when the pair stops to be in contact
+		NX_NOTIFY_ON_TOUCH				(1<<3),	//!< Pair callback will keep getting called while the pair is in contact
+		NX_NOTIFY_ON_IMPACT				(1<<4),	//!< [Not yet implemented] pair callback will be called when it may be appropriate for the pair to play an impact sound
+		NX_NOTIFY_ON_ROLL				(1<<5),	//!< [Not yet implemented] pair callback will be called when the pair is in contact and rolling.
+		NX_NOTIFY_ON_SLIDE				(1<<6),	//!< [Not yet impleumented] pair callback will be called when the pair is in contact and sliding (and not rolling).
+		NX_NOTIFY_FORCES				(1<<7),	//!< The friction force and normal force will be available in the contact report
+
+		NX_NOTIFY_CONTACT_MODIFICATION	(1<<16),	//!< Generate a callback for all associated contact constraints, making it possible to edit the constraint. This flag is not included in NX_NOTIFY_ALL for performance reasons. \see NxUserContactModify
+
+		NX_NOTIFY_ALL					(NX_NOTIFY_ON_START_TOUCH.getValue()|NX_NOTIFY_ON_END_TOUCH.getValue()|NX_NOTIFY_ON_TOUCH.getValue()|NX_NOTIFY_ON_IMPACT.getValue()|NX_NOTIFY_ON_ROLL.getValue()|NX_NOTIFY_ON_SLIDE.getValue()|NX_NOTIFY_FORCES.getValue())
+		;
+		int value;
+		public int getValue() {
+			return value;
+		}
+		NxContactPairFlag(int value) {
+			this.value = value;
+		}
+		}
+	public static void onContactNotify() {
+		System.out.println("SKODNOTIFY");
+		
+	};
+		
 	/*
 	 * Enumerations
 	 * 
@@ -164,7 +197,9 @@ public class Functions {
 	}
 
 	public static native void worldSetStepTiming(float timing);
-
+	
+	public static native void  worldEnableUserContactReport();
+	public static native void worldSetContactPairFlags(int actorid1,int actorid2,int flags);
 	public static native void worldCreate();
 
 	// public static native void worldCreateGroundPlane();
@@ -175,7 +210,8 @@ public class Functions {
 	public static native void actorSetRotation(int id, float[] a);
 
 	public static native float[] actorGetRotation(int id);
-
+	
+	
 	//
 	public static native void worldStep(float step);
 

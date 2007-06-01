@@ -1,6 +1,17 @@
 package net.physx4java;
 
+import java.util.HashMap;
+
+import net.physx4java.dynamics.actors.Actor;
+
 public class World {
+	static HashMap<Integer, Actor> actors = new HashMap<Integer, Actor>();
+	public static void addActor(Actor actor) {
+		actors.put(actor.getId(), actor);
+	}
+	public static Actor getActor(int id) {
+		return actors.get(id);
+	}
 	public World() {
 		super();
 		Functions.worldCreate();
@@ -21,6 +32,12 @@ public class World {
 	}
 	public float getGravityX() {
 		return Functions.worldGetGravityX();
+	}
+	public void enableContactUserReport() {
+		Functions.worldEnableUserContactReport();;
+	}
+	public void setContactPairFlags(Actor  a1,Actor a2,int flags) {
+		Functions.worldSetContactPairFlags(a1.getId(), a2.getId(), flags);
 	}
 	public float getGravityY() {
 		return Functions.worldGetGravityY();

@@ -20,8 +20,47 @@ std::map<int,NxMaterial*> materials;
 std::map<int,NxActorDesc*> actorDesc;
 std::map<int,NxJoint*> joints;
 std::map<int,NxJointDesc*> jointDesc;
+JavaVM * javaVm;
 
+#ifndef JNI_OnLoad_12_DECLARED
+#define JNI_OnLoad_12_DECLARED
+jint jniOnLoadVersion = 0;
+JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void *reserved) {
+	cout<<"VM LOADED";
+	javaVm = vm;
+	return (jniOnLoadVersion = JNI_VERSION_1_2);
+}
+#endif /* JNI_OnLoad_12_DECLARED */
 
+/*
+Contact report
+*/
+ class JavaContactReport : public NxUserContactReport    {
+	 
+	public:
+	 JavaContactReport() {
+		}
+ 
+	 void onContactNotify(NxContactPair& pair, NxU32 events)        {
+		JNIEnv* env = NULL;
+		javaVm->AttachCurrentThread((void**) &env, NULL);
+		if (env == NULL)  {
+			cout<<"CONTACT : METHOD NOT NULL\n";
+			return;
+		}
+		NxActor  * actor1 =  pair.actors[0];
+		NxActor  * actor2 =  pair.actors[1];
+		int    * id1 =  (int*)actor1->userData;
+		int    * id2 =  (int*)actor2->userData;
+	    
+		NxVec3 ff = pair.sumFrictionForce;
+		NxVec3 nf = pair.sumNormalForce;
+		  jclass functionCls = env->FindClass( "net/physx4java/dynamics/collision/CollisionHandling");
+		  jmethodID mid = env->GetStaticMethodID(functionCls, "onContactNotify", "(IIIFFFFFF)V");
+		  env->CallStaticVoidMethod(functionCls,mid,*id1,*id2,events,ff.x,ff.y,ff.z,nf.x,nf.y,nf.z);
+		
+	 }    
+ };
 extern "C" {
 #endif
 	void addJoint(int id, NxJoint *j) {
@@ -86,6 +125,19 @@ jfloatArray vector3dToJfloatArray(JNIEnv * env,NxVec3 &vec) {
 JNIEXPORT void JNICALL Java_net_physx4java_Functions_worldUseCCD
 (JNIEnv *, jobject) {
 	physicsSDK->setParameter(NX_CONTINUOUS_CD, 1);
+}
+JNIEXPORT void JNICALL Java_net_physx4java_Functions_worldSetContactPairFlags
+(JNIEnv * env, jobject,int actorid1,int actorid2,int flags) {
+	NxActor *actor1 = getActor(actorid1);
+	NxActor *actor2 = getActor(actorid2);
+
+	scene->setActorPairFlags(*actor1,*actor2,(NxContactPairFlag)flags);
+
+}
+JNIEXPORT void JNICALL Java_net_physx4java_Functions_worldEnableUserContactReport
+(JNIEnv * env, jobject) {
+	JavaContactReport *  report = new JavaContactReport();
+	scene->setUserContactReport(report);
 }
 JNIEXPORT void JNICALL Java_net_physx4java_Functions_worldCreateGroundPlane
 (JNIEnv *, jobject) {
@@ -384,6 +436,8 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_actorCreateAsBoxShape
 	addActorDesc(id,&actorDesc);
 	
 	NxActor * actor =  scene->createActor(actorDesc);	
+	//set id
+	actor->userData=new int(id);
 	//add actor
 	//check for CCD
 	if(useCDN) {
@@ -409,6 +463,8 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_actorCreateAsGroundPlane
     NxActorDesc actorDesc;
     actorDesc.shapes.pushBack(&planeDesc);
     NxActor * actor =  scene->createActor(actorDesc);
+	//set id
+	actor->userData = new int(id);
 	addActor(id,actor);
 };
 JNIEXPORT void JNICALL Java_net_physx4java_Functions_actorSetAsStatic
@@ -439,7 +495,8 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_actorCreateAsSphereShape
 	actorDesc.density = 10;
 	actorDesc.globalPose.t = NxVec3(0,radius,0);		
 	NxActor * actor =  scene->createActor(actorDesc);	
-	
+	//set id, use "userdata" field
+	actor->userData = new int(id);
 	addActor(id,actor);
 	cout<<"Sphere Actor added:"<<id<<"\n";
 	if(actor==NULL) cout<<"Box Actor==NULL";
