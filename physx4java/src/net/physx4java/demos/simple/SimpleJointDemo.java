@@ -6,7 +6,7 @@ import javax.vecmath.Vector3f;
 import sun.awt.GlobalCursorManager;
 
 import net.physx4java.Functions;
-import net.physx4java.World;
+import net.physx4java.WorldPhysX;
 import net.physx4java.dynamics.actors.Actor;
 import net.physx4java.dynamics.actors.ActorParameters;
 import net.physx4java.dynamics.actors.BoxActor;
@@ -21,7 +21,7 @@ public class SimpleJointDemo {
 	public static void main(String args[]) throws Exception {
 		
 		//Create a new world
-		World world =  new World();
+		WorldPhysX world =  new WorldPhysX();
 		//set gravity
 		world.setGravity(0, -9, 0);
 		//create a groundplane

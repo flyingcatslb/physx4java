@@ -1,6 +1,6 @@
 package net.physx4java.demos.simple;
 
-import net.physx4java.World;
+import net.physx4java.WorldPhysX;
 import net.physx4java.dynamics.actors.Actor;
 import net.physx4java.dynamics.actors.ActorParameters;
 import net.physx4java.dynamics.actors.BoxActor;
@@ -11,7 +11,7 @@ import net.physx4java.dynamics.actors.SphereActor;
 public class SimpleActorDemo {
 	public static void main(String args[]) throws Exception {
 		//Create a new world
-		World world =  new World();
+		WorldPhysX world =  new WorldPhysX();
 		//set gravity
 		world.setGravity(0, -9, 0);
 		//create a groundplane

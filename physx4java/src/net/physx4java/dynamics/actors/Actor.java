@@ -4,7 +4,7 @@ import javax.vecmath.Matrix3f;
 import javax.vecmath.Vector3f;
 
 import net.physx4java.Functions;
-import net.physx4java.World;
+import net.physx4java.WorldPhysX;
 
 
 /**
@@ -56,7 +56,7 @@ public abstract class Actor {
 	public Actor() {
 		//create id
 		id = id_counter++;
-		World.addActor(this);
+		WorldPhysX.addActor(this);
 	}
 	
 	/**

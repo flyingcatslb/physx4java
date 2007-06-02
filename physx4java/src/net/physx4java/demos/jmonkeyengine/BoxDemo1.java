@@ -13,7 +13,7 @@ public void initPhysics() {
 		for(int y=0;y<15;y++) {
 			float size_box = 1f;
 			ActorParameters parameters = new ActorParameters();
-			parameters.setDensity(10);
+			parameters.setDensity(0.8f);
 			parameters.setDynamic(true);
 			JmeGlue node =  addBox(parameters,1f, x*size_box*4f+(float)(Math.random()/2d), (float)(y*size_box*2.5), 0, size_box, size_box, size_box);
 			node.getActor().setMaterial(getDefaultMaterial());

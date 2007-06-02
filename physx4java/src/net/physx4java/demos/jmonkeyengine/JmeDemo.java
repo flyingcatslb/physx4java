@@ -5,7 +5,7 @@ import java.util.Collection;
 
 import javax.vecmath.Vector3f;
 
-import net.physx4java.World;
+import net.physx4java.WorldPhysX;
 import net.physx4java.dynamics.actors.Actor;
 import net.physx4java.dynamics.actors.ActorParameters;
 import net.physx4java.dynamics.actors.BoxActor;
@@ -19,7 +19,7 @@ import com.jme.scene.Node;
 import com.jme.scene.shape.Box;
 
 public abstract class JmeDemo extends SimpleGame {
-	World world;
+	WorldPhysX world;
 	Material defaultMaterial;
 	float stepSize = 0.01f;
 	Collection<JmeGlue> physicsNodes = new ArrayList<JmeGlue>();
@@ -58,7 +58,7 @@ public abstract class JmeDemo extends SimpleGame {
 		plane.update();
 	}
 	public void initPhysics() {
-		world  = new World();
+		world  = new WorldPhysX();
 		world.setGravity(0, -9, 0);
 		defaultMaterial = new Material();
 		defaultMaterial.setDynamicFriction(0.5f);

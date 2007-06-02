@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 import net.physx4java.dynamics.actors.Actor;
 
-public class World {
+public class WorldPhysX {
 	static HashMap<Integer, Actor> actors = new HashMap<Integer, Actor>();
 	public static void addActor(Actor actor) {
 		actors.put(actor.getId(), actor);
@@ -12,7 +12,7 @@ public class World {
 	public static Actor getActor(int id) {
 		return actors.get(id);
 	}
-	public World() {
+	public WorldPhysX() {
 		super();
 		Functions.worldCreate();
 	}

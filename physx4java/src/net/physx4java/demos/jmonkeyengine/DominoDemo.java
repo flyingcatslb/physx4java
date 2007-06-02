@@ -1,7 +1,7 @@
 package net.physx4java.demos.jmonkeyengine;
 
 import net.physx4java.Functions;
-import net.physx4java.World;
+import net.physx4java.WorldPhysX;
 import net.physx4java.dynamics.actors.Actor;
 import net.physx4java.dynamics.actors.ActorParameters;
 import net.physx4java.dynamics.collision.CollisionHandling;
@@ -12,10 +12,10 @@ public class DominoDemo extends JmeDemo implements CollisionListener{
 	public void onContactNotify(ContactPair pair) {
 		try {
 			//Thread.sleep(10);
-			Actor actor1 =  World.getActor(pair.getActorid1());
-			Actor actor2 = World.getActor(pair.getActorid2());
+			Actor actor1 =  WorldPhysX.getActor(pair.getActorid1());
+			Actor actor2 = WorldPhysX.getActor(pair.getActorid2());
 			System.out.println(actor1.getName()+"->"+actor2.getName()+" "+pair.getFlags());
-			//System.exit(0);
+			
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -31,8 +31,8 @@ public class DominoDemo extends JmeDemo implements CollisionListener{
 		world.enableContactUserReport();
 		CollisionHandling.addListener(this);
 		//System.exit(0);
-		setStepSize(1f);
-		int bricks = 200;
+		setStepSize(10f);
+		int bricks = 120;
 		float widht = 0.2f;
 		float height = 2f;
 		float depth = 0.5f;
@@ -40,10 +40,10 @@ public class DominoDemo extends JmeDemo implements CollisionListener{
 		actorParameters.setDynamic(true);
 		actorParameters.setDensity(100);
 		getDefaultMaterial().setDynamicFriction(10);
-		Actor ball = addSphere(actorParameters, 1f, -widht*200, 0, 0, 1f).getActor();
+		Actor ball = addSphere(actorParameters, 10f, -widht*200, 0, 0, 1f).getActor();
 		for(int i=0;i<bricks;i++) {
 			
-			 Actor a =  addBox(actorParameters, 1, i*widht*8, height, 0, widht, height, depth).getActor();
+			 Actor a =  addBox(actorParameters, 1, i*widht*10, height, 0, widht, height, depth).getActor();
 			 a.setName("Box("+i+")");
 			 int id = a.getId();
 			 world.setContactPairFlags(ball, a, Functions.NxContactPairFlag.NX_NOTIFY_ON_TOUCH.getValue());
