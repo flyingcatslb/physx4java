@@ -80,7 +80,7 @@ public class SimpleJointDemo {
 			sphere.addForce(1000, 0, 0);
 			Thread.sleep(10);
 			material1.setDynamicFriction((float)(Math.random()*10f));
-			world.update(0.01f);
+			world.step(0.01f);
 			//print results
 			System.out.println("Position of objects : "+box.getPosition()+";"+sphere.getPosition());
 			//System.out.println("Velocity ="+box.getLinearVelocity()+" "+sphere.getLinearVelocity());

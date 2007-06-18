@@ -9,7 +9,7 @@ using namespace std;
 /* Header for class physics_Test */
 //the scene
 NxPhysicsSDK*     physicsSDK = NULL;
-NxScene*          scene = NULL;
+NxScene*  scene = NULL;
 //map to hold object
 
 #ifndef _Included_net_physx4java_Test

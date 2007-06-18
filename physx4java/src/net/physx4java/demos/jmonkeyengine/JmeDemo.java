@@ -78,7 +78,7 @@ public abstract class JmeDemo extends SimpleGame {
 	protected void simpleUpdate() {
 		// TODO Auto-generated method stub
 		super.simpleUpdate();
-		world.update(getStepSize());
+		world.step(getStepSize());
 		updatePhysicsNodes();
 		
 	}

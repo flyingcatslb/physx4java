@@ -43,7 +43,7 @@ public class SimpleActorDemo {
 			Thread.sleep(10);
 			material1.setDynamicFriction((float)(Math.random()*10f));
 			//step the world
-			world.update(0.01f);//set stepsize here
+			world.step(0.01f);//set stepsize here
 			//print results
 			System.out.println("Position of objects : "+box.getPosition()+";"+sphere.getPosition());
 			System.out.println("Velocity ="+box.getLinearVelocity()+" "+sphere.getLinearVelocity());

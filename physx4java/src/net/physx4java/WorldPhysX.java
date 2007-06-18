@@ -27,7 +27,7 @@ public class WorldPhysX {
 		
 		Functions.worldSetStepTiming(f);
 	}
-	public void update(float step) {
+	public void step(float step) {
 		Functions.worldStep(step);
 	}
 	public float getGravityX() {
