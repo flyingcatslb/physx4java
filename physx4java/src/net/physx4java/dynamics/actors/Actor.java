@@ -49,6 +49,9 @@ public abstract class Actor {
 	public Matrix3f getRotation() {
 		return new Matrix3f(Functions.actorGetRotation(id));
 	}
+	public void setRotation(Matrix3f m) {
+		Functions.actorSetRotation(id,m);
+	}
 	/**
 	 * Creates a new actor. 
 	 *
@@ -77,6 +80,7 @@ public abstract class Actor {
 	public void setPosition(float x,float y,float z) {
 		Functions.actorSetPosition(id,x, y, z);
 	}
+	
 	public void setPosition(Vector3f vec) {
 		setPosition(vec.x,vec.y,vec.z);
 	}

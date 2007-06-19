@@ -15,7 +15,7 @@ public class DominoDemo extends JmeDemo implements CollisionListener{
 			Actor actor1 =  WorldPhysX.getActor(pair.getActorid1());
 			Actor actor2 = WorldPhysX.getActor(pair.getActorid2());
 			System.out.println("Contact: "+actor1.getName()+"->"+actor2.getName()+" "+pair.getSumFrictionForce()+ " "+pair.getSumNormalforce());
-		
+			
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -49,6 +49,7 @@ public class DominoDemo extends JmeDemo implements CollisionListener{
 			  * Setup collision testing
 			  */
 			 world.setContactPairFlags(ball, a, Functions.NxContactPairFlag.NX_NOTIFY_ON_TOUCH.getValue()|Functions.NxContactPairFlag.NX_NOTIFY_FORCES.getValue());
+			 
 		}
 		
 		

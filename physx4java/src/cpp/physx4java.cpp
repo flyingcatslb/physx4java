@@ -153,9 +153,10 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_worldCreateGroundPlane
 JNIEXPORT void JNICALL Java_net_physx4java_Functions_actorSetRotation
 (JNIEnv * env, jobject,int id,jfloatArray arr) {
 	
+	
 	//convert array
 	jfloat buf[9];
-    env->GetFloatArrayRegion(arr, 0, 10, buf);
+    env->GetFloatArrayRegion(arr, 0, 9, buf);
 	//convert array to matric
 	NxMat33 m;
 	m.setRow(0,NxVec3(buf[0],buf[1],buf[2]));
@@ -165,7 +166,7 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_actorSetRotation
 	NxActor  * actor  = getActor(id);
 	//set orientation
 	actor->setGlobalOrientation(m);
-	//cout<<"value="<<buf[0];
+	cout<<"JEG BLIR KALDT=";
 }
 
 JNIEXPORT jfloatArray JNICALL Java_net_physx4java_Functions_actorGetRotation

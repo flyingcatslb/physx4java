@@ -119,7 +119,7 @@ public abstract class JointDesc {
 	public void setGlobalAnchor(float x,float y,float z) {
 		Functions.jointDescSetGlobalAnchor(id, x,y,z);
 	}
-
+	
 	/**
 	 * Set the local axis/normal using a world space axis.
 	 * 
@@ -133,5 +133,7 @@ public abstract class JointDesc {
 	public void setGlobalAxis(float x,float y,float z) {
 		Functions.jointDescSetGlobalAxis(id, x,y,z);
 	}
-
+	public void setGlobalAxis(Vector3f v) {
+		Functions.jointDescSetGlobalAxis(id, v.x,v.y,v.z);
+	}
 }

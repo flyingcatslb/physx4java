@@ -49,6 +49,6 @@ public class SimpleActorDemo {
 			System.out.println("Velocity ="+box.getLinearVelocity()+" "+sphere.getLinearVelocity());
 			System.out.println("Force ="+box.computeKineticEnergy()+" "+sphere.computeKineticEnergy());
 			//System.out.println("Rotation:\n "+box.getRotation()+";\n"+sphere.getRotation());
-			}
+		}
 	}
 }

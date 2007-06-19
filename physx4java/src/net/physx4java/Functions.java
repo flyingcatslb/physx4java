@@ -245,7 +245,7 @@ public class Functions {
 
 	//
 	public static native void worldSetGravity(float x, float y, float z);
-
+	
 	public static native void worldUseCCD();
 
 	public static native float worldGetGravityX();
