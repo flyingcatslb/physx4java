@@ -906,6 +906,20 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_jointRevoluteCreate
 	
 }	
 
+JNIEXPORT void JNICALL Java_net_physx4java_Functions_jointFixedCreate
+(JNIEnv *,jobject,int jointId,int actorid1,int actorid2) {
+	
+	///
+	NxActor * actor1 = getActor(actorid1);
+	NxActor * actor2 = getActor(actorid2);
+	NxFixedJointDesc   jointDesc;
+	
+	//
+	NxJoint * joint =  scene->createJoint(jointDesc);
+	addJoint(jointId,joint);
+	
+	
+}	
 JNIEXPORT void JNICALL Java_net_physx4java_Functions_jointD6Create
 (JNIEnv *,jobject,int jointId) {
 	
