@@ -587,23 +587,28 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_actorSetPosition
 	}
 	
 	JNIEXPORT void JNICALL Java_net_physx4java_Functions_jointDescSetLocalNormal
-		(JNIEnv *env, jobject, int jointId,jfloatArray normal1,jfloatArray normal2) {
+		(JNIEnv *env, jobject, int jointId,int index,jfloatArray normal) {
 			//convert to float arrays
-			jfloat num_buf1[3];
-			jfloat num_buf2[3];
-			env->GetFloatArrayRegion(normal1, 0, 10, num_buf1);
-			env->GetFloatArrayRegion(normal2, 0, 10, num_buf2);
-			getJointDesc(jointId)->localNormal[0]=NxVec3(num_buf1);
-			getJointDesc(jointId)->localNormal[1]=NxVec3(num_buf2);
-	
+			jfloat num_buf[3];
+			env->GetFloatArrayRegion(normal, 0, 3, num_buf);
+			getJointDesc(jointId)->localNormal[index]=NxVec3(num_buf);
+			
+				
 	}
-		
+	JNIEXPORT void JNICALL Java_net_physx4java_Functions_jointDescSetLocalAxis
+		(JNIEnv *env, jobject, int jointId,int index,jfloatArray normal) {
+			//convert to float arrays
+			jfloat num_buf[3];
+			env->GetFloatArrayRegion(normal, 0, 3, num_buf);
+			getJointDesc(jointId)->localAxis[index]=NxVec3(num_buf);
+			
+				
+	}	
 			//get jointdesc
 		
 	
 	JNIEXPORT void JNICALL Java_net_physx4java_Functions_jointDescSetLocalAnchor
 	(JNIEnv * env, jobject, int jointId,jfloatArray anchor1,jfloatArray anchor2) {
-		
 		jfloat num_buf1[3];
 		jfloat num_buf2[3];
 		env->GetFloatArrayRegion(anchor1, 0, 3, num_buf1);
@@ -648,7 +653,7 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_jointD6DescSetLinearDegrees
 	
 }
 JNIEXPORT void JNICALL Java_net_physx4java_Functions_jointD6DescSetAngularDegreesOfFreedom
-(JNIEnv *, jobject,int jointId, int swing1,int swing2,int twist) {
+(JNIEnv *, jobject,int jointId, int twist,int swing1,int swing2) {
 	//cout<<"\n LINEAR "<<swing1<<" "<<swing2<<" "<<twist<<" \n";
 	//get jointdesc
 	NxD6JointDesc * desc = (NxD6JointDesc*) getJointDesc(jointId);
@@ -902,9 +907,7 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_jointRevoluteCreate
 	//
 	NxRevoluteJoint  * joint = (NxRevoluteJoint*) scene->createJoint( desc);
 	addJoint(jointId,joint);
-	
-	
-}	
+	}	
 
 JNIEXPORT void JNICALL Java_net_physx4java_Functions_jointFixedCreate
 (JNIEnv *,jobject,int jointId,int actorid1,int actorid2) {
@@ -913,7 +916,8 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_jointFixedCreate
 	NxActor * actor1 = getActor(actorid1);
 	NxActor * actor2 = getActor(actorid2);
 	NxFixedJointDesc   jointDesc;
-	
+	jointDesc.actor[0]=actor1;
+	jointDesc.actor[1]=actor2;
 	//
 	NxJoint * joint =  scene->createJoint(jointDesc);
 	addJoint(jointId,joint);
@@ -927,7 +931,7 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_jointD6Create
 	NxD6JointDesc * jointDesc = (NxD6JointDesc *)getJointDesc(jointId);
 	NxD6JointDesc desc = *jointDesc;
 	//
-	NxD6Joint  * joint = (NxD6Joint*) scene->createJoint( desc);
+	NxD6Joint  * joint = (NxD6Joint*) scene->createJoint(desc);
 	addJoint(jointId,joint);
 	
 	

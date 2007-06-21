@@ -21,8 +21,6 @@ public class JmeD6JointDemo1 extends JmeDemo{
 		params.setDensity(10);
 		actor1 =  addBox(params, 1f, -2f, 2f, 0, 0.5f, 0.5f, 0.5f).getActor();
 		actor2 =  addBox(params, 1f, 2f, 2f, 0,0.5f,0.5f,0.5f).getActor();
-		int a = actor1.getId();
-		
 		
 		//getDefaultMaterial().setRestitution(1f);
 		//world.setTiming(0);

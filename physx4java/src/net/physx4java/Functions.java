@@ -217,6 +217,7 @@ public class Functions {
 	public static native void testRunner();
 
 	public static float[] toArray(Vector3f v) {
+		if(v==null) return null;
 		float a[] = new float[3];
 		a[0] = v.x;
 		a[1] = v.y;
@@ -322,8 +323,10 @@ public class Functions {
 			int actorId2);
 	public static native void jointDescSetGlobalAxis(int jointId, float x,float y,float z); 
 
-	public static native void jointDescSetLocalNormal(int jointId,
-			float normal1[], float normal2[]);
+	public static native void jointDescSetLocalAxis(int jointId,int index,
+			float axis[]);
+	public static native void jointDescSetLocalNormal(int jointId,int index,
+			float normal[]);
 
 	public static native void jointDescSetLocalAnchor(int jointId, float f1[],
 			float f2[]);
@@ -339,6 +342,7 @@ public class Functions {
 	 */
 	public static native void jointDescD6Create(int id);
 
+	
 	public static native void jointD6DescSetLinearDegreesOfFreedom(int jointId,
 			int  motion_x, int  motion_y, int motion_z);
 
@@ -368,6 +372,8 @@ public class Functions {
 	public static native void jointD6DescSetZDrive(int jointId, int driveType,
 			float damping, float forceLimit, float spring);
 
+	public static native void  jointFixedCreate(int jointId,int actorid1,int actorid2);
+		
 	public static native void jointD6DescSetSwingDrive(int jointId,
 			int driveType, float damping, float forceLimit, float spring);
 

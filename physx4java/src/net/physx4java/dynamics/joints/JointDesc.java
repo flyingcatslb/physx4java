@@ -59,6 +59,7 @@ public abstract class JointDesc {
 		this.actor2 = actor2;
 		Functions.jointDescSetActors(getId(), actor1.getId(), actor2.getId());
 	}
+	
 
 	/**
 	 * X axis of joint space, in actor[i]'s space, orthogonal to localAxis[i].
@@ -77,11 +78,12 @@ public abstract class JointDesc {
 	 * @param normal1
 	 * @param normal2
 	 */
-	public void setLocalNormal(Vector3f normal1, Vector3f normal2) {
-		Functions.jointDescSetLocalNormal(id, Functions.toArray(normal1),
-				Functions.toArray(normal2));
+	public void setLocalNormal(int index,Vector3f normal) {
+		Functions.jointDescSetLocalNormal(id, index,Functions.toArray(normal));
 	}
-
+	public void setLocalAxis(int index,Vector3f axis) {
+		Functions.jointDescSetLocalAxis(id, index,Functions.toArray(axis));
+	}
 	/**
 	 * Attachment point of joint in actor[i]'s space.
 	 * 

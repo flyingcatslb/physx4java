@@ -42,15 +42,15 @@ public class D6JointDesc extends JointDesc {
 	 * 
 	 * PC SW: Yes PPU : Yes PS3 : Yes XB360: Yes
 	 * 
-	 * @param motion_x
-	 * @param motion_y
-	 * @param motion_z
+	 * @param twist
+	 * @param swing1
+	 * @param swing2
 	 */
-	public void setAngularDegreesOfFreedom(Functions.NxD6JointMotion motion_x,
-			Functions.NxD6JointMotion motion_y,
-			Functions.NxD6JointMotion motion_z) {
+	public void setAngularDegreesOfFreedom(Functions.NxD6JointMotion twist,
+			Functions.NxD6JointMotion swing1,
+			Functions.NxD6JointMotion swing2) {
 		Functions.jointD6DescSetAngularDegreesOfFreedom(id,
-				motion_x.getValue(), motion_y.getValue(), motion_z.getValue());
+				twist.getValue(), swing1.getValue(), swing2.getValue());
 
 	}
 
