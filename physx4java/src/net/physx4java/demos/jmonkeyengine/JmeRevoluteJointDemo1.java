@@ -10,36 +10,45 @@ import net.physx4java.dynamics.joints.RevoluteJointDesc;
 
 
 public class JmeRevoluteJointDemo1 extends JmeDemo{
-	Actor actor1;
-	Actor actor2;
+	Actor actor;
+	
 	RevoluteJoint joint;
 	public void initPhysics() {
-		Functions.testRunner();
+		//Functions.testRunner();
 		super.initPhysics();
 		//world.setGravity(0, 0, 0);
 		//create actors
 		ActorParameters params = new ActorParameters();
 		params.setDensity(10);
+		actor = null;
+		for(int i=0;i<30;i++) {
 			
-		actor1 =  addBox(params, 1f, -2f, 2f, 0, 0.5f, 0.5f, 0.5f).getActor();
-		actor2 =  addBox(params, 1f, 2f, 2f, 0,0.5f,0.5f,0.5f).getActor();
-		setStepSize(0.001f);
+		Actor prevActor = actor;
+			
+		actor =  addBox(params, 2f, -2f*(float)i*2, 2f, 0, 1f, 1f, 1f).getActor();
+		//
+		setStepSize(0.01f);
 		
 		//getDefaultMaterial().setRestitution(1f);
 		//world.setTiming(0);
-		RevoluteJointDesc jd = new RevoluteJointDesc();
-		jd.setActors(actor1, actor2);
-		jd.setGlobalAnchor(0,0,0);
-		jd.setGlobalAxis(0,1,0f);
+		
+		if(prevActor!=null) {
+			RevoluteJointDesc jd = new RevoluteJointDesc();
+			jd.setActors(prevActor, actor);
+			jd.setGlobalAnchor(3,3,3);
+			jd.setGlobalAxis(0,1,0f);
+			joint = new RevoluteJoint(jd);
+			joint.setLimit(0, 0, (float)-0.3,0, 0, (float)0.3);
+			
+			//joint.setFlags(Functions.NxRevoluteJointFlag.NX_RJF_LIMIT_ENABLED.getValue()|Functions.NxRevoluteJointFlag.NX_RJF_MOTOR_ENABLED.getValue());
+		}
+		
 		
 		
 		//jd.setMotor((float)Math.PI, 10000, false);
 		//enable motors
-		joint = new RevoluteJoint(jd);
-		joint.setLimit(0, 0, (float)-2,0, 0, (float)2);
 		
-		joint.setFlags(Functions.NxRevoluteJointFlag.NX_RJF_LIMIT_ENABLED.getValue()|Functions.NxRevoluteJointFlag.NX_RJF_MOTOR_ENABLED.getValue());
-		
+		}
 		
 		
 		
@@ -54,17 +63,21 @@ public class JmeRevoluteJointDemo1 extends JmeDemo{
 		// TODO Auto-generated method stub
 		super.simpleUpdate();
 		count--;
-		
+		float angle = joint.getAngle();
+		if(angle!=0.0)
+		System.out.println("GET ANGLE = "+angle);
 		if(count<=0) {
-			count = 1000;
-			float angle = joint.getAngle();
+			count = 10000;
+			
+			
 			if(angle<=-1.9||angle>=1.9) {
-				joint.setSpring(1000, 2, vel);
+				//joint.setSpring(1000, 2, vel);
 				vel = -vel;
-				joint.setMotor(vel, 20, false);
+				//joint.setMotor(vel, 20, false);
+				
 			}
 			//System.out.println();
-			actor2.addForce(0, 500, 0);
+			//actor.addForce(0, 2000, 0);
 			
 			
 			//

@@ -16,7 +16,7 @@ import net.physx4java.dynamics.actors.Actor;
 public abstract class JointDesc {
 	Actor actor1, actor2;
 
-	protected int id_counter;
+	protected static int id_counter;
 
 	int id;
 
