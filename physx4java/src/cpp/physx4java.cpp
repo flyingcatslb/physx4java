@@ -890,14 +890,21 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_jointRevoluteSetMotor
 	//NxMotorDesc motorDesc;
 	//NxRevoluteJointDesc * desc = (NxRevoluteJointDesc*)getJointDesc(jointId);
 	//desc.flags |= NX_RJF_MOTOR_ENABLED;
+	NxRevoluteJoint * j = (NxRevoluteJoint *) getJoint(jointId);
 	NxMotorDesc motor;
+	j->getMotor(motor);
 	motor.maxForce = maxForce;
 	motor.velTarget = velTarget;
 	motor.freeSpin= freeSpin;
-	NxRevoluteJoint * j = (NxRevoluteJoint *) getJoint(jointId);
+	j->setMotor(motor);
+	//cout<<"DESIRED SPEED="<<velTarget<<"\n";
+
+	
+	
+
 	//NxRevoluteJointDesc desc = getR
 	//j->getMotor(motorDesc);
-	j->setMotor(motor);
+	//j->setMotor(motor);
 	//motorDesc.maxForce = maxForce;
 	//motorDesc.velTarget = velTarget;
 	//motorDesc.freeSpin = freeSpin;
@@ -923,11 +930,12 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_jointRevoluteCreate
 	
 	///
 	NxRevoluteJointDesc * jointDesc = (NxRevoluteJointDesc *)getJointDesc(jointId);
+	jointDesc->
 	NxRevoluteJointDesc desc = *jointDesc;
 	//desc.flags = NX_RJF_LIMIT_ENABLED;
 	//desc.flags = NX_RJF_LIMIT_ENABLED;
-	desc.projectionDistance= 0.01;
-	desc.projectionMode = NX_JPM_POINT_MINDIST;
+	desc.projectionDistance= 0.001;
+	//desc.projectionMode = NX_JPM_POINT_MINDIST;
 	//motors
 	NxMotorDesc motorDesc;
 	desc.motor = motorDesc;
