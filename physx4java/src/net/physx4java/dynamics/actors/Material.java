@@ -55,8 +55,6 @@ public class Material {
 		Functions.materialSetStaticFriction(id, staticFriction);
 	}
 
-	public void setStaticFrictionV(float staticFrictionV) {
-		
-	}
+	
 	
 }

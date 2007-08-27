@@ -9,6 +9,9 @@ public class WorldPhysX {
 	public static void addActor(Actor actor) {
 		actors.put(actor.getId(), actor);
 	}
+	public void setGravityY(float gravityY) {
+		Functions.worldSetGravity(0, gravityY, 0);
+	} 
 	public static Actor getActor(int id) {
 		return actors.get(id);
 	}

@@ -147,6 +147,7 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_worldCreateGroundPlane
     NxActorDesc actorDesc;
     actorDesc.shapes.pushBack(&planeDesc);
 	scene->createActor(actorDesc);
+	
 }
 
 
@@ -350,17 +351,23 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_worldCreate
 	printf("Initializing world\n");
 	physicsSDK = NxCreatePhysicsSDK(NX_PHYSICS_SDK_VERSION);
 	// Set the physics parameters
-	physicsSDK->setParameter(NX_SKIN_WIDTH, 0.01);
+	//physicsSDK->setParameter(NX_SKIN_WIDTH, 0.01);
 	// Set the debug visualization parameters
 	physicsSDK->setParameter(NX_VISUALIZATION_SCALE, 1);
 	physicsSDK->setParameter(NX_VISUALIZE_COLLISION_SHAPES, 1);
 	physicsSDK->setParameter(NX_VISUALIZE_ACTOR_AXES, 1);
+	physicsSDK->setParameter(NX_SKIN_WIDTH,0.01);
+	//physicsSDK->setParameter(NX_SI
 	//create scene
 	NxSceneDesc sceneDesc;
- 	sceneDesc.simType				= NX_SIMULATION_HW;
-    //sceneDesc.gravity               = NxVec3 (0,-9,0);
+ 	
+	sceneDesc.simType				= NX_SIMULATION_HW;
+	sceneDesc.maxIter = 32;
+	
+	//sceneDesc.gravity               = NxVec3 (0,-9,0);
 	//try to create hardware scene
 	scene = physicsSDK->createScene(sceneDesc);	
+	
 	//check if hardware scene was created
 	
 	if(!scene){ 
@@ -930,12 +937,15 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_jointRevoluteCreate
 	
 	///
 	NxRevoluteJointDesc * jointDesc = (NxRevoluteJointDesc *)getJointDesc(jointId);
-	jointDesc->
+	//jointDesc->
 	NxRevoluteJointDesc desc = *jointDesc;
 	//desc.flags = NX_RJF_LIMIT_ENABLED;
 	//desc.flags = NX_RJF_LIMIT_ENABLED;
-	desc.projectionDistance= 0.001;
-	//desc.projectionMode = NX_JPM_POINT_MINDIST;
+	
+	//desc.projectionAngle = 0;
+	desc.projectionMode = NX_JPM_LINEAR_MINDIST;
+	desc.projectionDistance= 10;
+	///desc.
 	//motors
 	NxMotorDesc motorDesc;
 	desc.motor = motorDesc;
