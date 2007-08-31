@@ -260,7 +260,8 @@ public class Functions {
 
 	public static native void actorCreateAsBoxShape(int id, boolean isDynamic,
 			boolean useCCD, float x, float y, float z);
-
+	public static native void actorCreateAsNoShape(int id, boolean isDynamic,
+			boolean useCCD);
 	public static native void actorCreateAsSphereShape(int id,
 			boolean isDynamic, float radius);
 

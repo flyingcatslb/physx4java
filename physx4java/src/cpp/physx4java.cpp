@@ -340,6 +340,7 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_worldSetStepTiming
 (JNIEnv *, jobject,float timing) {
 	scene->setTiming(timing,NX_TIMESTEP_FIXED);
 }
+//JNIEXPORT void JNICALL Java_net_physx4java_Functions_sdkCreate
 /*
  * Class:     physics_World
  * Method:    Create
@@ -356,13 +357,13 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_worldCreate
 	physicsSDK->setParameter(NX_VISUALIZATION_SCALE, 1);
 	physicsSDK->setParameter(NX_VISUALIZE_COLLISION_SHAPES, 1);
 	physicsSDK->setParameter(NX_VISUALIZE_ACTOR_AXES, 1);
-	physicsSDK->setParameter(NX_SKIN_WIDTH,0.01);
+	physicsSDK->setParameter(NX_SKIN_WIDTH,1);
 	//physicsSDK->setParameter(NX_SI
 	//create scene
 	NxSceneDesc sceneDesc;
  	
 	sceneDesc.simType				= NX_SIMULATION_HW;
-	sceneDesc.maxIter = 32;
+	//sceneDesc.maxIter = 32;
 	
 	//sceneDesc.gravity               = NxVec3 (0,-9,0);
 	//try to create hardware scene
@@ -413,6 +414,48 @@ JNIEXPORT jfloat JNICALL Java_net_physx4java_Functions_worldGetGravityZ
 	scene->getGravity(vec);
 	return vec.z;
 }
+JNIEXPORT void JNICALL Java_net_physx4java_Functions_actorCreateAsNoShape
+(JNIEnv *, jobject, int id,bool isDynamic,bool useCDN) {
+
+	NxActorDesc actorDesc;
+	//create bodyDesc
+	NxBodyDesc bodyDesc;
+	
+	//craete boxshape
+	NxBoxShapeDesc boxDesc;
+	boxDesc.dimensions.set(0.01,0.1,0.1);
+	
+	actorDesc.shapes.pushBack(&boxDesc);
+	//check for static or dynamic (if not dynamic bodyDesc must be null
+	if(isDynamic)actorDesc.body = &bodyDesc;
+	else
+		actorDesc.body  = NULL;
+
+	actorDesc.density = 10;
+	
+	actorDesc.globalPose.t = NxVec3(0,0,0);		
+	//add actordesc
+	addActorDesc(id,&actorDesc);
+	
+	NxActor * actor =  scene->createActor(actorDesc);	
+	//set id
+	actor->userData=new int(id);
+	//add actor
+	//check for CCD
+	if(useCDN) {
+		NxShape *shape= actor->getShapes()[0]; 
+		NxShapeFlag flag;
+		shape->getFlag(flag);
+		shape->setFlag(NX_SF_DYNAMIC_DYNAMIC_CCD,true);
+		NxSimpleTriangleMesh triMesh;
+		 CreateMeshFromShape(triMesh,shape);
+		 NxCCDSkeleton *newSkeleton=physicsSDK->createCCDSkeleton(triMesh);        
+		 //FreeSimpleMesh(triMesh);        
+		 shape->setCCDSkeleton(newSkeleton);
+	}
+	addActor(id,actor);
+	
+};
 //actor functions
 /*
  * Class:     physics_Actor
@@ -432,6 +475,7 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_actorCreateAsBoxShape
 	boxDesc.dimensions.set(x,y,z);
 	
 	actorDesc.shapes.pushBack(&boxDesc);
+	
 	//check for static or dynamic (if not dynamic bodyDesc must be null
 	if(isDynamic)actorDesc.body = &bodyDesc;
 	else
@@ -444,6 +488,7 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_actorCreateAsBoxShape
 	addActorDesc(id,&actorDesc);
 	
 	NxActor * actor =  scene->createActor(actorDesc);	
+	actor->setSolverIterationCount(32);
 	//set id
 	actor->userData=new int(id);
 	//add actor
@@ -943,8 +988,8 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_jointRevoluteCreate
 	//desc.flags = NX_RJF_LIMIT_ENABLED;
 	
 	//desc.projectionAngle = 0;
-	desc.projectionMode = NX_JPM_LINEAR_MINDIST;
-	desc.projectionDistance= 10;
+	desc.projectionMode = NX_JPM_POINT_MINDIST;
+	desc.projectionDistance= 0.1;
 	///desc.
 	//motors
 	NxMotorDesc motorDesc;
