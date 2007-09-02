@@ -1,11 +1,21 @@
 package net.physx4java;
 
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.Map;
 
 import net.physx4java.dynamics.actors.Actor;
+import net.physx4java.dynamics.collision.CollisionHandling;
+import net.physx4java.dynamics.collision.CollisionListener;
 
 public class WorldPhysX {
 	static HashMap<Integer, Actor> actors = new HashMap<Integer, Actor>();
+	public Collection<CollisionListener> getListeners()  {
+		return CollisionHandling.getListeners();
+	}
+	public void  setListeners(Collection<CollisionListener> listeners)  {
+		CollisionHandling.setListeners(listeners);
+	}
 	public static void addActor(Actor actor) {
 		actors.put(actor.getId(), actor);
 	}
@@ -35,6 +45,9 @@ public class WorldPhysX {
 	}
 	public float getGravityX() {
 		return Functions.worldGetGravityX();
+	}
+	public void setEnableContactUserReport(boolean enable) {
+		Functions.worldEnableUserContactReport();;
 	}
 	public void enableContactUserReport() {
 		Functions.worldEnableUserContactReport();;

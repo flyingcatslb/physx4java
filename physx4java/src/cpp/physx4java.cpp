@@ -45,7 +45,7 @@ Contact report
 		JNIEnv* env = NULL;
 		javaVm->AttachCurrentThread((void**) &env, NULL);
 		if (env == NULL)  {
-			cout<<"CONTACT : METHOD NOT NULL\n";
+
 			return;
 		}
 		NxActor  * actor1 =  pair.actors[0];
@@ -167,7 +167,7 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_actorSetRotation
 	NxActor  * actor  = getActor(id);
 	//set orientation
 	actor->setGlobalOrientation(m);
-	cout<<"JEG BLIR KALDT=";
+	
 }
 
 JNIEXPORT jfloatArray JNICALL Java_net_physx4java_Functions_actorGetRotation
@@ -357,7 +357,7 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_worldCreate
 	physicsSDK->setParameter(NX_VISUALIZATION_SCALE, 1);
 	physicsSDK->setParameter(NX_VISUALIZE_COLLISION_SHAPES, 1);
 	physicsSDK->setParameter(NX_VISUALIZE_ACTOR_AXES, 1);
-	physicsSDK->setParameter(NX_SKIN_WIDTH,1);
+	physicsSDK->setParameter(NX_SKIN_WIDTH,0.01);
 	//physicsSDK->setParameter(NX_SI
 	//create scene
 	NxSceneDesc sceneDesc;
@@ -438,6 +438,7 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_actorCreateAsNoShape
 	addActorDesc(id,&actorDesc);
 	
 	NxActor * actor =  scene->createActor(actorDesc);	
+	
 	//set id
 	actor->userData=new int(id);
 	//add actor
@@ -551,8 +552,8 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_actorCreateAsSphereShape
 	//set id, use "userdata" field
 	actor->userData = new int(id);
 	addActor(id,actor);
-	cout<<"Sphere Actor added:"<<id<<"\n";
-	if(actor==NULL) cout<<"Box Actor==NULL";
+
+	
 };
 JNIEXPORT void JNICALL Java_net_physx4java_Functions_actorAddBoxShape
 (JNIEnv *, jobject, int id,float x,float y,float z) {
@@ -587,14 +588,8 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_actorAddSphereShape
 JNIEXPORT void JNICALL Java_net_physx4java_Functions_actorSetMass
 (JNIEnv *, jobject obj,int id, double mass)
 {
-	cout<<"getting actor:"<<id<<"\n";
+
 	NxActor * actor = getActor(id);
-	cout<<actor<<id<<"\n";
-	if(actor==NULL) {
-		printf("IS NULL");
-	}else {
-		printf("IS NOT NULL");
-	}
 	actor->setMass(mass);
 }
 
@@ -1053,9 +1048,7 @@ JNIEXPORT float JNICALL Java_net_physx4java_Functions_jointRevoluteGetVelocity
 
 JNIEXPORT void JNICALL Java_net_physx4java_Functions_testRunner
 (JNIEnv *, jobject) {
-	cout<<NX_D6JOINT_MOTION_LOCKED<<"\n";
-	cout<<NX_D6JOINT_MOTION_LIMITED<<"\n";
-	cout<<NX_D6JOINT_MOTION_FREE<<"\n";
+	
 }
 
 

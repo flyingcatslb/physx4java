@@ -2,12 +2,20 @@ package net.physx4java.dynamics.collision;
 
 import javax.vecmath.Vector3f;
 
+import net.physx4java.WorldPhysX;
+import net.physx4java.dynamics.actors.Actor;
+
 public class ContactPair {
 	private int actorid1;
 	private int actorid2;
 	private int flags;
 	private Vector3f sumNormalforce;
 	private Vector3f sumFrictionForce;
+	public String toString() {
+		Actor actor1  =  WorldPhysX.getActor(actorid1);
+		Actor actor2  =  WorldPhysX.getActor(actorid2);
+		return actor1.getName()+"->"+actor2.getName();
+	}
 	public int getActorid1() {
 		return actorid1;
 	}

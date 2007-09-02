@@ -26,5 +26,11 @@ public class CollisionHandling {
 			listener.onContactNotify(contactPair);
 		}
 	}
+	public static Collection<CollisionListener> getListeners() {
+		return listeners;
+	}
+	public static void setListeners(Collection<CollisionListener> listeners) {
+		CollisionHandling.listeners = listeners;
+	}
 	
 }
