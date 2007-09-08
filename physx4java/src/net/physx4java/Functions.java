@@ -428,6 +428,6 @@ public class Functions {
 	public static native float jointRevoluteGetAngle(int jointId);
 	public static native float  jointRevoluteGetVelocity(int jointId);
 	static {
-		System.loadLibrary("physx");
+		System.loadLibrary("physx4j");
 	}
 }

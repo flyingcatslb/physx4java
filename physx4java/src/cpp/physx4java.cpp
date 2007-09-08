@@ -357,7 +357,7 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_worldCreate
 	physicsSDK->setParameter(NX_VISUALIZATION_SCALE, 1);
 	physicsSDK->setParameter(NX_VISUALIZE_COLLISION_SHAPES, 1);
 	physicsSDK->setParameter(NX_VISUALIZE_ACTOR_AXES, 1);
-	physicsSDK->setParameter(NX_SKIN_WIDTH,0.01);
+	physicsSDK->setParameter(NX_SKIN_WIDTH,0.1);
 	//physicsSDK->setParameter(NX_SI
 	//create scene
 	NxSceneDesc sceneDesc;
@@ -424,7 +424,7 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_actorCreateAsNoShape
 	//craete boxshape
 	NxBoxShapeDesc boxDesc;
 	boxDesc.dimensions.set(0.01,0.1,0.1);
-	
+
 	actorDesc.shapes.pushBack(&boxDesc);
 	//check for static or dynamic (if not dynamic bodyDesc must be null
 	if(isDynamic)actorDesc.body = &bodyDesc;
@@ -1007,6 +1007,7 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_jointFixedCreate
 	///
 	NxActor * actor1 = getActor(actorid1);
 	NxActor * actor2 = getActor(actorid2);
+	
 	NxFixedJointDesc   jointDesc;
 	jointDesc.actor[0]=actor1;
 	jointDesc.actor[1]=actor2;
