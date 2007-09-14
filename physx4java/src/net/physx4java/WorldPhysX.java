@@ -2,6 +2,7 @@ package net.physx4java;
 
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 import net.physx4java.dynamics.actors.Actor;
@@ -9,7 +10,11 @@ import net.physx4java.dynamics.collision.CollisionHandling;
 import net.physx4java.dynamics.collision.CollisionListener;
 
 public class WorldPhysX {
-	static HashMap<Integer, Actor> actors = new HashMap<Integer, Actor>();
+	static HashMap<Integer, Actor> actorsById = new HashMap<Integer, Actor>();
+	static HashMap<String, Actor> actorsByName = new HashMap<String, Actor>();
+	public static Collection<Actor> getAllActors() {
+		return actorsById.values();
+	}
 	public Collection<CollisionListener> getListeners()  {
 		return CollisionHandling.getListeners();
 	}
@@ -17,13 +22,17 @@ public class WorldPhysX {
 		CollisionHandling.setListeners(listeners);
 	}
 	public static void addActor(Actor actor) {
-		actors.put(actor.getId(), actor);
+		actorsById.put(actor.getId(), actor);
+		actorsByName.put(actor.getName(), actor);
 	}
 	public void setGravityY(float gravityY) {
 		Functions.worldSetGravity(0, gravityY, 0);
 	} 
 	public static Actor getActor(int id) {
-		return actors.get(id);
+		return actorsById.get(id);
+	}
+	public static Actor getActor(String name) {
+		return actorsByName.get(name);
 	}
 	public WorldPhysX() {
 		super();
@@ -52,7 +61,7 @@ public class WorldPhysX {
 	public void enableContactUserReport() {
 		Functions.worldEnableUserContactReport();;
 	}
-	public void setContactPairFlags(Actor  a1,Actor a2,int flags) {
+	public static void setContactPairFlags(Actor  a1,Actor a2,int flags) {
 		Functions.worldSetContactPairFlags(a1.getId(), a2.getId(), flags);
 	}
 	public float getGravityY() {

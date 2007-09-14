@@ -14,10 +14,16 @@ public class ContactPair {
 	public String toString() {
 		Actor actor1  =  WorldPhysX.getActor(actorid1);
 		Actor actor2  =  WorldPhysX.getActor(actorid2);
-		return actor1.getName()+"->"+actor2.getName();
+		return actor1.getName()+"->"+actor2.getName()+": sumNormalForce="+getSumNormalforce()+ " sumFrictionForce="+getSumFrictionForce();
 	}
 	public int getActorid1() {
 		return actorid1;
+	}
+	public Actor getActor1() {
+		return WorldPhysX.getActor(actorid1);
+	}
+	public Actor getActor2() {
+		return WorldPhysX.getActor(actorid2);
 	}
 	public int getActorid2() {
 		return actorid2;
