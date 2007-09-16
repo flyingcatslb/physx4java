@@ -49,6 +49,9 @@ public abstract class Actor {
 	public Matrix3f getRotation() {
 		return new Matrix3f(Functions.actorGetRotation(id));
 	}
+	public void setSolverIterationCounts(int iterations) {
+		Functions.actorSetSolverIterations(id, iterations);
+	}
 	public void setRotation(Matrix3f m) {
 		Functions.actorSetRotation(id,m);
 	}

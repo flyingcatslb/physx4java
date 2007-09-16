@@ -149,7 +149,13 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_worldCreateGroundPlane
 	scene->createActor(actorDesc);
 	
 }
-
+JNIEXPORT void JNICALL Java_net_physx4java_Functions_actorSetSolverIterations
+(JNIEnv * env, jobject,int id,int iter) {
+	NxActor  * actor  = getActor(id);
+	//set iterations
+	actor->setSolverIterationCount(iter);
+	
+}
 
 JNIEXPORT void JNICALL Java_net_physx4java_Functions_actorSetRotation
 (JNIEnv * env, jobject,int id,jfloatArray arr) {
@@ -489,7 +495,7 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_actorCreateAsBoxShape
 	addActorDesc(id,&actorDesc);
 	
 	NxActor * actor =  scene->createActor(actorDesc);	
-	actor->setSolverIterationCount(32);
+	//actor->setSolverIterationCount(120);
 	//set id
 	actor->userData=new int(id);
 	//add actor

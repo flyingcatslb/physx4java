@@ -230,7 +230,7 @@ public class Functions {
 	public static native void  worldEnableUserContactReport();
 	public static native void worldSetContactPairFlags(int actorid1,int actorid2,int flags);
 	public static native void worldCreate();
-
+	public static native void actorSetSolverIterations(int id,int iter);
 	// public static native void worldCreateGroundPlane();
 	public static void actorSetRotation(int id, Matrix3f m) {
 		actorSetRotation(id, toArray(m));
