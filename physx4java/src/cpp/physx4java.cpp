@@ -360,9 +360,9 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_worldCreate
 	// Set the physics parameters
 	//physicsSDK->setParameter(NX_SKIN_WIDTH, 0.01);
 	// Set the debug visualization parameters
-	physicsSDK->setParameter(NX_VISUALIZATION_SCALE, 1);
-	physicsSDK->setParameter(NX_VISUALIZE_COLLISION_SHAPES, 1);
-	physicsSDK->setParameter(NX_VISUALIZE_ACTOR_AXES, 1);
+	//physicsSDK->setParameter(NX_VISUALIZATION_SCALE, 1);
+	//physicsSDK->setParameter(NX_VISUALIZE_COLLISION_SHAPES, 1);
+	//physicsSDK->setParameter(NX_VISUALIZE_ACTOR_AXES, 1);
 	physicsSDK->setParameter(NX_SKIN_WIDTH,0.1);
 	//physicsSDK->setParameter(NX_SI
 	//create scene
@@ -1015,11 +1015,13 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_jointFixedCreate
 	NxActor * actor2 = getActor(actorid2);
 	
 	NxFixedJointDesc   jointDesc;
+	
 	jointDesc.actor[0]=actor1;
 	jointDesc.actor[1]=actor2;
 	//jointDesc.
 	//
 	NxJoint * joint =  scene->createJoint(jointDesc);
+	
 	addJoint(jointId,joint);
 	
 	
