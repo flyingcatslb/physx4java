@@ -148,6 +148,7 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_worldCreateGroundPlane
     actorDesc.shapes.pushBack(&planeDesc);
 	scene->createActor(actorDesc);
 	
+	
 }
 JNIEXPORT void JNICALL Java_net_physx4java_Functions_actorSetSolverIterations
 (JNIEnv * env, jobject,int id,int iter) {
@@ -317,6 +318,7 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_materialSetStaticFriction
 (JNIEnv * env, jobject,int id,float friction) {
 	//get actor
 	NxMaterial  * m = getMaterial(id);
+	
 	m->setStaticFriction(friction);
 	
 }
@@ -364,11 +366,14 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_worldCreate
 	//physicsSDK->setParameter(NX_VISUALIZE_COLLISION_SHAPES, 1);
 	//physicsSDK->setParameter(NX_VISUALIZE_ACTOR_AXES, 1);
 	physicsSDK->setParameter(NX_SKIN_WIDTH,0.1);
+	
+	
 	//physicsSDK->setParameter(NX_SI
 	//create scene
 	NxSceneDesc sceneDesc;
  	
 	sceneDesc.simType				= NX_SIMULATION_HW;
+	sceneDesc.flags = sceneDesc.flags|NX_SF_FORCE_CONE_FRICTION;
 	//sceneDesc.maxIter = 32;
 	
 	//sceneDesc.gravity               = NxVec3 (0,-9,0);
@@ -383,6 +388,7 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_worldCreate
 		scene = physicsSDK->createScene(sceneDesc);  
 		if(!scene) return;
 	}
+	
 	//create groundplane
 	//CreateGroundPlane();
 }
@@ -477,10 +483,10 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_actorCreateAsBoxShape
 	NxActorDesc actorDesc;
 	//create bodyDesc
 	NxBodyDesc bodyDesc;
+	
 	//craete boxshape
 	NxBoxShapeDesc boxDesc;
 	boxDesc.dimensions.set(x,y,z);
-	
 	actorDesc.shapes.pushBack(&boxDesc);
 	
 	//check for static or dynamic (if not dynamic bodyDesc must be null
