@@ -230,6 +230,7 @@ public class Functions {
 	public static native void  worldEnableUserContactReport();
 	public static native void worldSetContactPairFlags(int actorid1,int actorid2,int flags);
 	public static native void worldCreate();
+	public static native void worldSetSkinWidth(float width);
 	public static native void actorSetSolverIterations(int id,int iter);
 	// public static native void worldCreateGroundPlane();
 	public static void actorSetRotation(int id, Matrix3f m) {
@@ -428,6 +429,8 @@ public class Functions {
 	public static native float jointRevoluteGetAngle(int jointId);
 	public static native float  jointRevoluteGetVelocity(int jointId);
 	static {
-		System.loadLibrary("physx4j");
+		System.loadLibrary("PhysXLoader");
+		System.loadLibrary("physxtest");
+		
 	}
 }

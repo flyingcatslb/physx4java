@@ -366,8 +366,12 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_worldCreate
 	//physicsSDK->setParameter(NX_VISUALIZE_COLLISION_SHAPES, 1);
 	//physicsSDK->setParameter(NX_VISUALIZE_ACTOR_AXES, 1);
 	physicsSDK->setParameter(NX_SKIN_WIDTH,0.1);
+<<<<<<< .mine
+	//physicsSDK->setParameter(NX_ADAPTIVE_FORCE,0.1);
+=======
 	
 	
+>>>>>>> .r42
 	//physicsSDK->setParameter(NX_SI
 	//create scene
 	NxSceneDesc sceneDesc;
@@ -526,6 +530,7 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_actorCreateAsGroundPlane
 
 	// Add a single-shape actor to the scene
 	NxPlaneShapeDesc planeDesc;
+	
     NxActorDesc actorDesc;
     actorDesc.shapes.pushBack(&planeDesc);
     NxActor * actor =  scene->createActor(actorDesc);
@@ -1026,8 +1031,9 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_jointFixedCreate
 	jointDesc.actor[1]=actor2;
 	//jointDesc.
 	//
+	//jointDesc.projectionMode = NX_JPM_POINT_MINDIST;
+	//jointDesc.projectionDistance= 0.1;
 	NxJoint * joint =  scene->createJoint(jointDesc);
-	
 	addJoint(jointId,joint);
 	
 	

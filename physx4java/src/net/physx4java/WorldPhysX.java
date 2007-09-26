@@ -12,6 +12,14 @@ import net.physx4java.dynamics.collision.CollisionListener;
 public class WorldPhysX {
 	static HashMap<Integer, Actor> actorsById = new HashMap<Integer, Actor>();
 	static HashMap<String, Actor> actorsByName = new HashMap<String, Actor>();
+	float skinWidth;
+	public float getSkinWidth() {
+		return skinWidth;
+	}
+	public void setSkinWidth(float skinWidth) {
+		this.skinWidth = skinWidth;
+		Functions.worldSetSkinWidth(skinWidth);
+	}
 	public static Collection<Actor> getAllActors() {
 		return actorsById.values();
 	}
@@ -36,6 +44,7 @@ public class WorldPhysX {
 	}
 	public WorldPhysX() {
 		super();
+		
 		Functions.worldCreate();
 	}
 	
