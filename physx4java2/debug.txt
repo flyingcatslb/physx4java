@@ -1,0 +1,562 @@
+2007-08-16 23:59:15 com.jme.app.BaseGame start
+INFO: Application started.
+2007-08-16 23:59:15 com.jme.system.PropertiesIO <init>
+INFO: PropertiesIO created
+2007-08-16 23:59:15 com.jme.system.PropertiesIO load
+INFO: Read properties
+2007-08-16 23:59:19 com.jme.input.joystick.DummyJoystickInput <init>
+INFO: Joystick support is disabled
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem <init>
+INFO: LWJGL Display System created.
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 512 x 384 x 16 @60Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 320 x 240 x 16 @75Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1024 x 768 x 16 @72Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 512 x 384 x 16 @70Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 640 x 400 x 32 @70Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 848 x 480 x 32 @60Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 640 x 400 x 32 @75Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 320 x 240 x 32 @70Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1280 x 1024 x 16 @70Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1600 x 900 x 32 @60Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 640 x 480 x 16 @75Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 848 x 480 x 32 @70Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1280 x 960 x 16 @72Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1280 x 960 x 32 @75Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 800 x 600 x 32 @70Hz: Bits per pixel != 16
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1360 x 768 x 32 @75Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1280 x 768 x 16 @75Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1280 x 800 x 16 @75Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1280 x 960 x 16 @60Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 480 x 360 x 32 @72Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1280 x 768 x 16 @72Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 400 x 300 x 32 @60Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1024 x 768 x 16 @75Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 320 x 200 x 32 @72Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 800 x 600 x 16 @72Hz: Match! 
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 848 x 480 x 16 @75Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 800 x 600 x 32 @56Hz: Bits per pixel != 16
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1280 x 960 x 16 @70Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 400 x 300 x 16 @70Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 720 x 480 x 16 @60Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 640 x 400 x 16 @60Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1024 x 768 x 32 @60Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 720 x 576 x 32 @60Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1088 x 612 x 16 @75Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 400 x 300 x 32 @72Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 800 x 600 x 32 @60Hz: Bits per pixel != 16
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1280 x 768 x 32 @60Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 320 x 240 x 32 @60Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1280 x 1024 x 32 @60Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 960 x 600 x 16 @72Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1280 x 720 x 32 @72Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1152 x 864 x 16 @72Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1600 x 900 x 16 @60Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1600 x 1024 x 16 @72Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 320 x 200 x 32 @70Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 960 x 600 x 16 @70Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1600 x 900 x 16 @75Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 800 x 600 x 16 @75Hz: Better match!
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 640 x 480 x 16 @72Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1680 x 1050 x 32 @60Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 640 x 400 x 32 @72Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 320 x 240 x 16 @72Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 960 x 600 x 32 @75Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 960 x 600 x 32 @60Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1024 x 768 x 16 @70Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 640 x 480 x 32 @70Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1280 x 768 x 16 @70Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1280 x 1024 x 16 @72Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1280 x 800 x 32 @60Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1280 x 800 x 16 @70Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1280 x 800 x 32 @75Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 512 x 384 x 32 @75Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 960 x 600 x 16 @75Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1280 x 720 x 32 @60Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1152 x 864 x 16 @60Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1280 x 720 x 32 @70Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1152 x 864 x 16 @70Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1360 x 768 x 32 @60Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1088 x 612 x 32 @72Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 320 x 200 x 16 @60Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1280 x 800 x 16 @72Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 480 x 360 x 32 @70Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 480 x 360 x 16 @60Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 960 x 600 x 32 @72Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 320 x 240 x 16 @70Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 320 x 200 x 16 @72Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1280 x 1024 x 32 @70Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1600 x 1024 x 16 @60Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 800 x 600 x 32 @72Hz: Bits per pixel != 16
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 640 x 480 x 16 @60Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 720 x 480 x 32 @60Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1280 x 768 x 32 @75Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1152 x 864 x 32 @70Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 640 x 400 x 32 @60Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1280 x 720 x 16 @70Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1024 x 768 x 32 @70Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1360 x 768 x 16 @70Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 480 x 360 x 16 @72Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1280 x 768 x 32 @70Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 400 x 300 x 16 @60Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 640 x 400 x 16 @75Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1280 x 720 x 32 @75Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 640 x 480 x 32 @75Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1152 x 864 x 16 @75Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 720 x 576 x 16 @60Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1088 x 612 x 32 @70Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1024 x 768 x 16 @60Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1280 x 768 x 16 @60Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1280 x 960 x 16 @75Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1152 x 864 x 32 @72Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1280 x 720 x 16 @72Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 512 x 384 x 32 @60Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 320 x 240 x 32 @75Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 640 x 400 x 16 @70Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1280 x 800 x 32 @72Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1360 x 768 x 16 @72Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1088 x 612 x 16 @60Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1024 x 768 x 32 @75Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 512 x 384 x 16 @75Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1600 x 900 x 16 @72Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1280 x 1024 x 16 @60Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1600 x 900 x 32 @70Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 848 x 480 x 32 @75Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 400 x 300 x 16 @75Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 848 x 480 x 16 @72Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1152 x 864 x 32 @60Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1280 x 720 x 16 @60Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 640 x 480 x 32 @72Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1360 x 768 x 16 @75Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 512 x 384 x 32 @72Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 848 x 480 x 16 @60Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1280 x 800 x 16 @60Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 320 x 240 x 16 @60Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1360 x 768 x 32 @72Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1088 x 612 x 32 @60Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 848 x 480 x 16 @70Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1680 x 1050 x 16 @60Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 512 x 384 x 32 @70Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1280 x 960 x 32 @72Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 400 x 300 x 16 @72Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1600 x 1024 x 32 @70Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 800 x 600 x 16 @60Hz: Better match!
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1280 x 800 x 32 @70Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 480 x 360 x 32 @75Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 400 x 300 x 32 @75Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 480 x 360 x 16 @70Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 848 x 480 x 32 @72Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 640 x 480 x 16 @70Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 960 x 600 x 32 @70Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 320 x 200 x 16 @70Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1280 x 960 x 32 @70Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 320 x 200 x 32 @75Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1088 x 612 x 32 @75Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1280 x 1024 x 32 @72Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 320 x 200 x 16 @75Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 800 x 600 x 32 @75Hz: Bits per pixel != 16
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1600 x 1024 x 16 @70Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 480 x 360 x 16 @75Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1152 x 864 x 32 @75Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1280 x 720 x 16 @75Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1360 x 768 x 16 @60Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1088 x 612 x 16 @72Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1088 x 612 x 16 @70Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 960 x 600 x 16 @60Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 320 x 240 x 32 @72Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1600 x 900 x 16 @70Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1360 x 768 x 32 @70Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 400 x 300 x 32 @70Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1600 x 900 x 32 @72Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 640 x 400 x 16 @72Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1600 x 1024 x 32 @72Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1600 x 1024 x 32 @60Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 480 x 360 x 32 @60Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 512 x 384 x 16 @72Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1024 x 768 x 32 @72Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1600 x 900 x 32 @75Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 320 x 200 x 32 @60Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1280 x 960 x 32 @60Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 1280 x 768 x 32 @72Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+FINE: DisplayMode 640 x 480 x 32 @60Hz: Width != 800
+2007-08-16 23:59:19 com.jme.system.lwjgl.LWJGLDisplaySystem getValidDisplayMode
+INFO: Selected DisplayMode: 800 x 600 x 16 @60Hz
+2007-08-16 23:59:19 com.jme.system.PropertiesIO save
+INFO: Saved properties
+2007-08-16 23:59:19 com.jme.app.BaseSimpleGame initSystem
+INFO: jME version 0.11 beta
+2007-08-16 23:59:20 com.jme.renderer.lwjgl.LWJGLRenderer <init>
+INFO: LWJGLRenderer created. W:  800H: 600
+2007-08-16 23:59:21 com.jme.app.BaseSimpleGame initSystem
+INFO: Running on: nv4_disp
+Driver version: 6.14.10.9371
+NVIDIA Corporation - GeForce FX 5200/PCI/SSE/3DNOW! - 2.0.3
+2007-08-16 23:59:21 com.jme.renderer.AbstractCamera <init>
+INFO: Camera created.
+2007-08-16 23:59:21 com.jme.util.lwjgl.LWJGLTimer <init>
+INFO: Timer resolution: 1000 ticks per second
+2007-08-16 23:59:21 com.jme.scene.Node <init>
+INFO: Node created.
+2007-08-16 23:59:21 com.jme.scene.Node <init>
+INFO: Node created.
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child (FPS label) attached to this node (FPS node)
+2007-08-16 23:59:21 com.jme.scene.Node <init>
+INFO: Node created.
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child () attached to this node (null)
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child (null) attached to this node (rootNode)
+2007-08-16 23:59:21 com.jme.scene.Node <init>
+INFO: Node created.
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child () attached to this node (null)
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child (null) attached to this node (rootNode)
+2007-08-16 23:59:21 com.jme.scene.Node <init>
+INFO: Node created.
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child () attached to this node (null)
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child (null) attached to this node (rootNode)
+2007-08-16 23:59:21 com.jme.scene.Node <init>
+INFO: Node created.
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child () attached to this node (null)
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child (null) attached to this node (rootNode)
+2007-08-16 23:59:21 com.jme.scene.Node <init>
+INFO: Node created.
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child () attached to this node (null)
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child (null) attached to this node (rootNode)
+2007-08-16 23:59:21 com.jme.scene.Node <init>
+INFO: Node created.
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child () attached to this node (null)
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child (null) attached to this node (rootNode)
+2007-08-16 23:59:21 com.jme.scene.Node <init>
+INFO: Node created.
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child () attached to this node (null)
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child (null) attached to this node (rootNode)
+2007-08-16 23:59:21 com.jme.scene.Node <init>
+INFO: Node created.
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child () attached to this node (null)
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child (null) attached to this node (rootNode)
+2007-08-16 23:59:21 com.jme.scene.Node <init>
+INFO: Node created.
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child () attached to this node (null)
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child (null) attached to this node (rootNode)
+2007-08-16 23:59:21 com.jme.scene.Node <init>
+INFO: Node created.
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child () attached to this node (null)
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child (null) attached to this node (rootNode)
+2007-08-16 23:59:21 com.jme.scene.Node <init>
+INFO: Node created.
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child () attached to this node (null)
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child (null) attached to this node (rootNode)
+2007-08-16 23:59:21 com.jme.scene.Node <init>
+INFO: Node created.
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child () attached to this node (null)
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child (null) attached to this node (rootNode)
+2007-08-16 23:59:21 com.jme.scene.Node <init>
+INFO: Node created.
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child () attached to this node (null)
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child (null) attached to this node (rootNode)
+2007-08-16 23:59:21 com.jme.scene.Node <init>
+INFO: Node created.
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child () attached to this node (null)
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child (null) attached to this node (rootNode)
+2007-08-16 23:59:21 com.jme.scene.Node <init>
+INFO: Node created.
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child () attached to this node (null)
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child (null) attached to this node (rootNode)
+2007-08-16 23:59:21 com.jme.scene.Node <init>
+INFO: Node created.
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child () attached to this node (null)
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child (null) attached to this node (rootNode)
+2007-08-16 23:59:21 com.jme.scene.Node <init>
+INFO: Node created.
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child () attached to this node (null)
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child (null) attached to this node (rootNode)
+2007-08-16 23:59:21 com.jme.scene.Node <init>
+INFO: Node created.
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child () attached to this node (null)
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child (null) attached to this node (rootNode)
+2007-08-16 23:59:21 com.jme.scene.Node <init>
+INFO: Node created.
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child () attached to this node (null)
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child (null) attached to this node (rootNode)
+2007-08-16 23:59:21 com.jme.scene.Node <init>
+INFO: Node created.
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child () attached to this node (null)
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child (null) attached to this node (rootNode)
+2007-08-16 23:59:21 com.jme.scene.Node <init>
+INFO: Node created.
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child () attached to this node (null)
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child (null) attached to this node (rootNode)
+2007-08-16 23:59:21 com.jme.scene.Node <init>
+INFO: Node created.
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child () attached to this node (null)
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child (null) attached to this node (rootNode)
+2007-08-16 23:59:21 com.jme.scene.Node <init>
+INFO: Node created.
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child () attached to this node (null)
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child (null) attached to this node (rootNode)
+2007-08-16 23:59:21 com.jme.scene.Node <init>
+INFO: Node created.
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child () attached to this node (null)
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child (null) attached to this node (rootNode)
+2007-08-16 23:59:21 com.jme.scene.Node <init>
+INFO: Node created.
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child () attached to this node (null)
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child (null) attached to this node (rootNode)
+2007-08-16 23:59:21 com.jme.scene.Node <init>
+INFO: Node created.
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child () attached to this node (null)
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child (null) attached to this node (rootNode)
+2007-08-16 23:59:21 com.jme.scene.Node <init>
+INFO: Node created.
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child () attached to this node (null)
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child (null) attached to this node (rootNode)
+2007-08-16 23:59:21 com.jme.scene.Node <init>
+INFO: Node created.
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child () attached to this node (null)
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child (null) attached to this node (rootNode)
+2007-08-16 23:59:21 com.jme.scene.Node <init>
+INFO: Node created.
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child () attached to this node (null)
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child (null) attached to this node (rootNode)
+2007-08-16 23:59:21 com.jme.scene.Node <init>
+INFO: Node created.
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child () attached to this node (null)
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child (null) attached to this node (rootNode)
+2007-08-16 23:59:21 com.jme.scene.Node <init>
+INFO: Node created.
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child () attached to this node (null)
+2007-08-16 23:59:21 com.jme.scene.Node attachChild
+INFO: Child (null) attached to this node (rootNode)
+2007-08-16 23:59:23 com.jme.app.BaseSimpleGame cleanup
+INFO: Cleaning up resources.
+2007-08-16 23:59:23 com.jme.app.BaseGame start
+INFO: Application ending.
