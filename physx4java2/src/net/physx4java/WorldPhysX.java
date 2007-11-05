@@ -14,6 +14,7 @@ public class WorldPhysX {
 	
 	static int sceneId;
 	int id;
+	double stepNumber;
 	float stepSize;
 	HashMap<Integer, Actor> actorsById = new HashMap<Integer, Actor>();
 	HashMap<String, Actor> actorsByName = new HashMap<String, Actor>();
@@ -72,10 +73,12 @@ public class WorldPhysX {
 		Functions.worldSetStepTiming(id,f);
 	}
 	public void step() {
-		Functions.worldStep(id,stepSize);
+		step(stepSize);
+		
 	}
 	public void step(float step) {
 		Functions.worldStep(id,step);
+		stepNumber++;
 	}
 	public float getGravityX() {
 		return Functions.worldGetGravityX(id);
@@ -107,10 +110,10 @@ public class WorldPhysX {
 	public void setStepSize(float stepSize) {
 		this.stepSize = stepSize;
 	}
-	
-	
-	
-	
-	
-	
+	public double getStepNumber() {
+		return stepNumber;
+	}
+	public void setStepNumber(double stepNumber) {
+		this.stepNumber = stepNumber;
+	}
 }

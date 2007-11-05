@@ -384,7 +384,7 @@ JNIEXPORT void JNICALL Java_net_physx4java_Functions_worldCreate
 	//physicsSDK->setParameter(NX_VISUALIZATION_SCALE, 1);
 	//physicsSDK->setParameter(NX_VISUALIZE_COLLISION_SHAPES, 1);
 	//physicsSDK->setParameter(NX_VISUALIZE_ACTOR_AXES, 1);
-	physicsSDK->setParameter(NX_SKIN_WIDTH,0.5);
+	physicsSDK->setParameter(NX_SKIN_WIDTH,0.1);
 	
 	
 	//physicsSDK->setParameter(NX_SI
